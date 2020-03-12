@@ -1,5 +1,3 @@
-Pikku testumuutos
-
 commit e542e78c5b01e6e37b2f2e26799abe0a5fe57ad7
 Author: TheHamster <anton.taleiko@gmail.com>
 Date:   Thu Mar 12 16:14:59 2020 +0200
