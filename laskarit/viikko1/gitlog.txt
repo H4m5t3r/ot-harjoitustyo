@@ -1,0 +1,97 @@
+commit e542e78c5b01e6e37b2f2e26799abe0a5fe57ad7
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 16:14:59 2020 +0200
+
+    Lisää harjoittelua
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f136dd4834ced0e0d54aa6c3626385f1da6fa3d6
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 16:11:20 2020 +0200
+
+    Harjoittelua
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 42f0a7b7368584a04a216f2d902c7196e176d2d3
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:56:59 2020 +0200
+
+    -p
+
+ eka.txt    | 2 +-
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit c1036461b90a8659ccdfb3e466353cfa1991a38b
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:55:26 2020 +0200
+
+    uudelleennimetty tiedosto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 55f886eafa868f7bf0515575a2bb7edeee5c6329
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:45:02 2020 +0200
+
+    delete
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d3129d3ca7ab3b986b329535faf1faee053eae2b
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:41:20 2020 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 46 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 1dcabbf015cf63fffdc01340375e63f3ab33273e
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:35:58 2020 +0200
+
+    lisää harjoittelua
+
+ kolmas.txt           | 1 +
+ stuff/jokin tiedosto | 0
+ toinen.txt           | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit d2f7df378dbc65d2aad9d6f30b7cb51d4701bb73
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:30:12 2020 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d5dc7365a9ac896f1409d0b26054f2658afd95c5
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:27:04 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit f5acc35978fbaf411eaad41226268875299c93f5
+Author: TheHamster <anton.taleiko@gmail.com>
+Date:   Thu Mar 12 12:23:42 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
