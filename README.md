@@ -7,3 +7,5 @@
 
 ### Viikko 2
 [Määrittelydokumentti](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
+
+[Viikon laskarit](https://github.com/H4m5t3r/ot-harjoitustyo/tree/master/laskarit/viikko2)
