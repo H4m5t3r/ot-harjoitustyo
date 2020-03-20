@@ -1,6 +1,7 @@
 # Työaikakirjanpito
 
-| päivä | aika | mitä tein  |
+| day | time | what I did  |
 | :----:|:-----| :-----|
-| 18.3 | 1    | luin ohjeet ja tarkastelin minkälainen rakenne projektin kansioilla pitäisi olla |
-||||
+| 19.3 | 1    | I read through the instructions and checked how the project directory should be structured |
+||1| I looked up tutorials for making a Tetris game that I could have use of during the project |
+|20.3|2| I planned the structure of the program and wrote down the requirement specifications |
