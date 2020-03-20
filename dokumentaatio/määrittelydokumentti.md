@@ -8,6 +8,8 @@ The program consists of two views:
 * the menu screen
 * the game screen.
 
+![model](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/interface.png)
+
 ### The menu screen
 The menu screen features a list of the backgrounds available and a list of the soundtracks that can be set to play during the game. All the options appear as buttons that can be pressed.
 
