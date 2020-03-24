@@ -1,4 +1,4 @@
-# Työaikakirjanpito
+# Work time log
 
 | day | time | what I did  |
 | :----:|:-----| :-----|

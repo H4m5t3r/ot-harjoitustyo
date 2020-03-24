@@ -19,7 +19,7 @@ The player can begin the game by pressing the "Start new game"-button.
 When the game begins the game window will appear with the chosen background. On the right of the game area there will be a score counter and below it a button that makes the program return to the main menu. The player moves the falling polygons with the arrow keys.
 
 ## Game logic (Tetris explained)
-When the game is started polygons made from squares start falling down from the top of the screen and the player has to move the blocks around while they are still "in the air" and try to for complete rows. When a whole row is filled with blocks they disappear and free up space for more. If the game field is filled up with blocks to the point that part of a block is above the allowed game area the game ends.
+When the game is started polygons made from squares start falling down from the top of the screen and the player has to move the blocks around while they are still "in the air" and try to for complete rows. When a whole row is filled with blocks they disappear and free up space for more. If the game field is filled up with blocks to the point that part of a polygon is above the allowed game area the game ends.
 
 ## The backgrounds
 The backgrounds will be simple images with a Tetris theme. The main focus here is to have different options to choose from and potential for expansion. The planned background color options are
