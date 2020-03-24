@@ -35,3 +35,4 @@ The different music options will all be variations of the Russian folk song that
 
 ## Potential expansions
 * Saving high scores
+* Adding more music and backgrounds
