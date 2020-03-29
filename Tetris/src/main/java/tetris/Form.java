@@ -1,8 +1,23 @@
 
 package tetris;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import static javafx.application.Application.launch;
 
 class Form {
     Rectangle a;
@@ -13,14 +28,14 @@ class Form {
     private String name;
     public int form = 1;
     
-    public Form (Rectangle a, Rectangle b, Rectangle c, Rectangle d){
+    public Form(Rectangle a, Rectangle b, Rectangle c, Rectangle d){
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
     }
     
-    public Form (Rectangle a, Rectangle b, Rectangle c, Rectangle d, String name){
+    public Form(Rectangle a, Rectangle b, Rectangle c, Rectangle d, String name){
         this.a = a;
         this.b = b;
         this.c = c;
