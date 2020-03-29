@@ -1,25 +1,9 @@
 
 package tetris;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import static javafx.application.Application.launch;
 
-class controller {
+public class Controller {
     //getting numbers and MESH from Tetris class
     public static final int MOVE = Tetris.MOVE;
     public static final int SIZE = Tetris.SIZE;

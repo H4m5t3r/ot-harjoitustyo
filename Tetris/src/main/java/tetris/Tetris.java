@@ -32,7 +32,7 @@ public class Tetris extends Application {
     public static int score = 0;
     public static int top = 0;
     private static boolean game = true;
-    private static Form nextObj = controller.makeRect();
+    private static Form nextObj = Controller.makeRect();
     private static int linesNo = 0;
 
     //creating a scene and starting the game
@@ -61,7 +61,7 @@ public class Tetris extends Application {
         group.getChildren().addAll(a.a, a.b, a.c, a.d);
         moveOnKeyPress(a);
         object = a;
-        nextObj = controller.makeRect();
+        nextObj = Controller.makeRect();
         ikkuna.setScene(scene);
         ikkuna.setTitle("TETRIS");
         ikkuna.show();
@@ -109,13 +109,13 @@ public class Tetris extends Application {
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
                     case RIGHT:
-                        controller.MoveRight(form);
+                        Controller.MoveRight(form);
                         break;
                     case DOWN:
                         MoveDown(form); //**
                         break;
                     case LEFT:
-                        controller.MoveLeft(form);
+                        Controller.MoveLeft(form);
                         break;
                     case UP:
                         MoveTurn(form); //**
@@ -520,7 +520,7 @@ public class Tetris extends Application {
 
             //Creating a new block and adding to the scene
             Form a = nextObj;
-            nextObj = controller.makeRect();
+            nextObj = Controller.makeRect();
             object = a;
             group.getChildren().addAll(a.a, a.b, a.c, a.d);
             moveOnKeyPress(a);

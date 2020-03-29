@@ -1,25 +1,10 @@
 
 package tetris;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import static javafx.application.Application.launch;
 
-class Form {
+public class Form {
     Rectangle a;
     Rectangle b;
     Rectangle c;
@@ -43,25 +28,30 @@ class Form {
         this.name = name;
     
     
-    //set the color of the polygons
-    switch (name) {
-        case "j":
+        //set the color of the polygons
+        if (name.equals("j")){
             color = Color.SLATEGRAY;
-        case "l":
-            color = Color.DARKGOLDENROD;
-        case "o":
-            color = Color.INDIANRED;
-        case "s":
-            color = Color.FORESTGREEN;
-        case "t":
-            color = Color.CADETBLUE;
-        case "z":
-            color = Color.HOTPINK;
-        case "i":
-            color = Color.SANDYBROWN;
-        
-        
         }
+        else if (name.equals("l")){
+            color = Color.DARKGOLDENROD;
+        }
+        else if (name.equals("l")){
+            color = Color.INDIANRED;
+        }
+        else if (name.equals("l")){
+            color = Color.FORESTGREEN;
+        }
+        else if (name.equals("l")){
+            color = Color.CADETBLUE;
+        }
+        else if (name.equals("l")){
+            color = Color.HOTPINK;
+        }
+        else {
+            color = Color.SANDYBROWN;
+        }
+    
+    
     this.a.setFill(color);
     this.b.setFill(color);
     this.c.setFill(color);
@@ -80,5 +70,9 @@ class Form {
         else{
             form = 1;
         }
+    }
+    
+    public Color getColor(){
+        return this.color;
     }
 }
