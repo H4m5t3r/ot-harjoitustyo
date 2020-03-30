@@ -1,4 +1,6 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Tetris
+
+This repository contains a Tetris project for the course "Ohjelmistotekniikka" (Software Development Methods). The purpose of this project is to create a replica of the classig video game Tetris with a menu and (at the time of writing) options to change the background image and the music that is playing. More information can be found in the requirement specification document.
 
 ## Documentation
 [Requirement specification](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
@@ -6,18 +8,21 @@
 [Work time log](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
 
 ## Useful commands
+**Use these commands in the folder named "Tetris".**
 
+Run the program:
+```
+  mvn compile exec:java -Dexec.mainClass=tetris.Main
+```
 
-## Tehtävät
-### Viikko 1
-[gitlog.txt](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+Run the tests:
 
-[komentorivi.txt](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+```
+mvn test
+```
 
-### Viikko 2
+Run the tests and generate a JaCoCo report:
 
-
-[Viikon laskarit](https://github.com/H4m5t3r/ot-harjoitustyo/tree/master/laskarit/viikko2)
-
-### Viikko 3
-[Viikon laskarit](https://github.com/H4m5t3r/ot-harjoitustyo/tree/master/laskarit/viikko3)
+```
+mvn test jacoco:report
+```
