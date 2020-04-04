@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.io.File;
+
 
 public class Menu extends Application {
 
@@ -29,14 +31,32 @@ public class Menu extends Application {
         
         g.add(background, 0, 1);
         
+        //Music
+        Music musicPlayer = new Music();
+        
+        
         VBox music = new VBox();
-        music.getChildren().add(new Label("Background"));
+        music.getChildren().add(new Label("Music"));
         Button eightbit = new Button("    8-bit   ");
         Button piano = new Button("    Piano  ");
         Button trumpet = new Button("Trumpet ");
+        Button stop = new Button("    Stop   ");
         music.getChildren().add(eightbit);
         music.getChildren().add(piano);
         music.getChildren().add(trumpet);
+        music.getChildren().add(stop);
+        
+        piano.setOnAction((event) -> {
+          musicPlayer.playMusic("TetrisPiano.wav");
+      });
+        
+        trumpet.setOnAction((event) -> {
+          musicPlayer.playMusic("TetrisTrumpet.wav");
+      });
+        
+        stop.setOnAction((event) -> {
+          musicPlayer.stopPlaying();
+      });
         
         g.add(music, 2, 1);
         
