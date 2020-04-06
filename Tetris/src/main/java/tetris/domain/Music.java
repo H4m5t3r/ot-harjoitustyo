@@ -1,5 +1,5 @@
 
-package tetris;
+package tetris.domain;
 
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
@@ -13,38 +13,36 @@ public class Music {
     AudioInputStream audioInput;
     File musicPath;
     
-    public Music(){
+    public Music() {
         this.playing = false;
-        try{
-        this.clip = AudioSystem.getClip();
-        } catch (Exception e){
+        try {
+            this.clip = AudioSystem.getClip();
+        } catch (Exception e) {
             System.out.println("Constructor ERROR");
         }
     }
     
-    public void playMusic(String musicLocation){
+    public void playMusic(String musicLocation) {
         System.out.println(this.playing);
-        if (this.playing){
-            try{
+        if (this.playing) {
+            try {
                 this.clip.stop();
                 this.musicPath = new File(musicLocation);
-                if (this.musicPath.exists()){
+                if (this.musicPath.exists()) {
                     this.audioInput = AudioSystem.getAudioInputStream(this.musicPath);
                     this.clip.open(this.audioInput);
                     this.clip.start();
                     return;
-                }
-                else{
+                } else {
                     System.out.println("Can't find file");
                 }
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("RestartERROR");
             }
-        }
-        else{
-            try{
+        } else {
+            try {
                 this.musicPath = new File(musicLocation);
-                if (this.musicPath.exists()){
+                if (this.musicPath.exists()) {
                     this.audioInput = AudioSystem.getAudioInputStream(this.musicPath);
 
                     System.out.println("2");
@@ -55,18 +53,17 @@ public class Music {
                     this.playing = true;
 
                     //JOptionPane.showMessageDialog(null, "Press OK to stop to stop playing");
-                }
-                else{
+                } else {
                     System.out.println("Can't find file");
                 }
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("MUSIC ERROR");
             }
         }
         this.playing = true;
     }
     
-    public void stopPlaying(){
+    public void stopPlaying() {
         this.clip.stop();
         this.playing = false;
     }
