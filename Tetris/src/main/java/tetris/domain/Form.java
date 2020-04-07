@@ -9,7 +9,7 @@ public class Form {
     public Rectangle b;
     public Rectangle c;
     public Rectangle d;
-    Color color;
+    private Color color;
     private String name;
     public int form = 1;
     

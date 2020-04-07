@@ -620,8 +620,8 @@ public class Tetris extends Application {
     }
 
     private boolean cB(Rectangle rect, int x, int y) {
-        boolean yb = false;
         boolean xb = false;
+        boolean yb = false;
         if (x >= 0) {
             xb = rect.getX() + x * MOVE <= XMAX - SIZE;
         }
@@ -629,12 +629,12 @@ public class Tetris extends Application {
             xb = rect.getX() + x * MOVE >= 0;
         }
         if (y >= 0) {
-            yb = rect.getY() + y * MOVE > 0;
+            yb = rect.getY() - y * MOVE > 0;
         }
         if (y < 0) {
             yb = rect.getY() + y * MOVE < YMAX;
         }
-        return xb && mesh[((int) rect.getX() / SIZE) + x][((int) rect.getY() / SIZE) - y] == 0;
+        return xb && yb && mesh[((int) rect.getX() / SIZE) + x][((int) rect.getY() / SIZE) - y] == 0;
     }
 
     //creating the scene and start the game
