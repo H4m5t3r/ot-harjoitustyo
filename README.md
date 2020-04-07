@@ -5,6 +5,8 @@ This repository contains a Tetris project for the course "Ohjelmistotekniikka" (
 ## Documentation
 [Requirement specification](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
+[Package diagram](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 [Work time log](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
 
 ## Useful commands
