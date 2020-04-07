@@ -14,7 +14,7 @@ This repository contains a Tetris project for the course "Ohjelmistotekniikka" (
 
 Run the program:
 ```
-  mvn compile exec:java -Dexec.mainClass=tetris.Main
+mvn compile exec:java -Dexec.mainClass=tetris.mainclass.Main
 ```
 
 Run the tests:
