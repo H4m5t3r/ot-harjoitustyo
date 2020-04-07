@@ -20,11 +20,6 @@ import tetris.domain.Controller;
 import tetris.domain.Form;
 import tetris.domain.Music;
 import tetris.domain.Tetris;
-import static tetris.domain.Tetris.XMAX;
-import static tetris.domain.Tetris.YMAX;
-import static tetris.domain.Tetris.score;
-import static tetris.domain.Tetris.top;
-import static tetris.domain.Tetris.mesh;
 
 public class TetrisUi extends Application{
     //Menu
@@ -50,14 +45,14 @@ public class TetrisUi extends Application{
     public static final int XMAX = SIZE * 12;
     public static final int YMAX = SIZE * 24;
     public static int[][] MESH = new int[XMAX / SIZE][YMAX / SIZE];
-    private static Pane group = new Pane();
-    private static Form object;
-    private static Scene scene = new Scene(group, XMAX + 150, YMAX);
+    public static Pane group = new Pane();
+    public static Form object;
+    public static Scene scene = new Scene(group, XMAX + 150, YMAX);
     public static int score = 0;
     public static int top = 0;
     private static boolean game = true;
-    private static Form nextObj = Controller.makeRect();
-    private static int linesNo = 0;
+    public static Form nextObj = Controller.makeRect();
+    public static int linesNo = 0;
     private static Button backToMenu = new Button("Menu");
     
     public void start(Stage stage) throws Exception {

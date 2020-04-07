@@ -1,170 +1,25 @@
 package tetris.domain;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
-import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import static javafx.application.Application.launch;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 
-public class Tetris extends Application {
-
-    //Variables
+public class Tetris {
     public static final int MOVE = 25;
     public static final int SIZE = 25;
-    public static final int XMAX = SIZE * 12;
-    public static final int YMAX = SIZE * 24;
+    public static int XMAX = SIZE * 12;
+    public static int YMAX = SIZE * 24;
     public static int[][] mesh = new int[XMAX / SIZE][YMAX / SIZE];
-    private static Pane group = new Pane();
-    private static Form object;
-    public Scene scene = new Scene(group, XMAX + 150, YMAX);
-    public static int score = 0;
-    public static int top = 0;
-    private static boolean game = true;
-    private static Form nextObj = Controller.makeRect();
-    private static int linesNo = 0;
-    private static Button backToMenu = new Button("Menu");
-    
-    //menu
-    private Music musicPlayer = new Music();
-    private GridPane g = new GridPane();
-    private Label title = new Label("TETRIS");
-    private VBox background = new VBox();
-    private VBox music = new VBox();
-    private Button blue = new Button("Blue");
-    private Button red = new Button("Red");
-    private Button green = new Button("Green");
-    private Button eightbit = new Button("8-bit");
-    private Button piano = new Button("Piano");
-    private Button trumpet = new Button("Trumpet");
-    private Button stop = new Button("Stop");
-    private Button newgame = new Button("Start new game");
-    private Scene menuScene = new Scene(this.g, 500, 500);
-
-    //creating a scene and starting the game
-    @Override
-    public void start(Stage stage) throws Exception {
-        stage.setTitle("Tetris");
-        for (int[] a : mesh) {
-            Arrays.fill(a, 0);
-        }
-
-        //Score and level text
-        Line line = new Line(XMAX, 0, XMAX, YMAX);
-        Text scoretext = new Text("Score: ");
-        scoretext.setStyle("-fx-font: 20 arial;");
-        scoretext.setY(50);
-        scoretext.setX(XMAX + 5);
-        Text level = new Text("Lines: ");
-        level.setStyle("-fx-font: 20 arial;");
-        level.setY(100);
-        level.setX(XMAX + 5);
-        level.setFill(Color.GREEN);
-        
-        group.getChildren().addAll(scoretext, line, level);
-
-        //Creating the first block and the stage
-        Form a = nextObj;
-        group.getChildren().addAll(a.a, a.b, a.c, a.d);
-        moveOnKeyPress(a);
-        object = a;
-        nextObj = Controller.makeRect();
-        
-        
-        
-        ////MENU
-        this.g.add(title, 1, 0);
-        
-        background.getChildren().add(new Label("Background"));
-        background.getChildren().add(blue);
-        background.getChildren().add(red);
-        background.getChildren().add(green);
-        this.g.add(background, 0, 1);
-        
-        music.getChildren().add(new Label("Background"));
-        music.getChildren().add(eightbit);
-        music.getChildren().add(piano);
-        music.getChildren().add(trumpet);
-        music.getChildren().add(stop);
-        this.g.add(music, 2, 1);
-        
-        piano.setOnAction((event) -> {
-            musicPlayer.playMusic("TetrisPiano.wav");
-        });
-        
-        trumpet.setOnAction((event) -> {
-            musicPlayer.playMusic("TetrisTrumpet.wav");
-        });
-        
-        stop.setOnAction((event) -> {
-            musicPlayer.stopPlaying();
-        });
-        
-        newgame.setOnAction((event) -> {
-            stage.setScene(scene);
-        });
-        g.add(newgame, 1, 2);
-        
-        backToMenu.setOnAction((event) -> {
-            stage.setScene(menuScene);
-        });
-        
-        
-        stage.setScene(menuScene);
-        stage.show();
-
-        //Timer
-        Timer fall = new Timer();
-        TimerTask task = new TimerTask() {
-            public void run() {
-                Platform.runLater(new Runnable() {
-                    public void run() {
-                        if (object.a.getY() == 0 || object.b.getY() == 0 || object.c.getY() == 0 || object.d.getY() == 0) {
-                            top++;
-                        } else {
-                            top = 0;
-                        }
-                        if (top == 2) {
-                            //GAME OVER
-                            Text over = new Text("GAME OVER");
-                            over.setFill(Color.RED);
-                            over.setStyle("-fx-font: 70 arial;");
-                            over.setY(250);
-                            over.setX(10);
-                            group.getChildren().add(over);
-                            game = false;
-                        }
-
-                        //Exit
-                        if (top == 15) {
-                            System.exit(0);
-                        }
-                        if (game) {
-                            moveDown(object);
-                            scoretext.setText("Score: " + Integer.toString(score));
-                            level.setText("Lines: " + Integer.toString(linesNo));
-                        }
-                    }
-                });
-            }
-        };
-        fall.schedule(task, 0, 300);
-    }
+    public static Scene scene = tetris.ui.TetrisUi.scene;
+    public static int linesNo = tetris.ui.TetrisUi.linesNo;
+    public static int score = tetris.ui.TetrisUi.score;
+    public static Pane group = tetris.ui.TetrisUi.group;
+    public static Form nextObj = tetris.ui.TetrisUi.nextObj;
+    public static Form object = tetris.ui.TetrisUi.object;
 
     public void moveOnKeyPress(Form form) {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -564,7 +419,7 @@ public class Tetris extends Application {
         }
     }
 
-    private void moveUp(Rectangle rect) {
+    public void moveUp(Rectangle rect) {
         if (rect.getY() - MOVE > 0) {
             rect.setY(rect.getY() - MOVE);
         }
@@ -635,10 +490,5 @@ public class Tetris extends Application {
             yb = rect.getY() + y * MOVE < YMAX;
         }
         return xb && yb && mesh[((int) rect.getX() / SIZE) + x][((int) rect.getY() / SIZE) - y] == 0;
-    }
-
-    //creating the scene and start the game
-    public static void main(String[] args) {
-        launch(Tetris.class);
     }
 }
