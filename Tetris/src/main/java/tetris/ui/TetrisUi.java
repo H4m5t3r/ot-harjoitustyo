@@ -87,12 +87,6 @@ public class TetrisUi extends Application{
       });
         
         
-        newgame.setOnAction((event) -> {
-          stage.setScene(this.tetris.scene);
-      });
-        g.add(newgame, 1, 2);
-        
-        
         //Creating the game screen
         for (int[] a : MESH) {
             Arrays.fill(a, 0);
@@ -154,8 +148,11 @@ public class TetrisUi extends Application{
                 });
             }
         };
-        fall.schedule(task, 0, 300);
-        
+        newgame.setOnAction((event) -> {
+          stage.setScene(this.tetris.scene);
+          fall.schedule(task, 0, 300);
+      });
+        g.add(newgame, 1, 2);
         
         stage.setScene(menuScene);
         stage.show();
