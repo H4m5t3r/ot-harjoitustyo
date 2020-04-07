@@ -13,6 +13,7 @@ Notes:
 
 * The game and its menu is complete. The problem I have right now is to separate the user interface from the game logic. Currently the first block behaves correctly but after it gets to the bottom of the screen the polygons get stuck at the top of the screen and the console is flooded with error messages.
 * The music class is still pretty messy. You can start the trumpet or piano melody but after you stop it starts to malfunction. I did not have enough time work on this since I spent most of my time trying to get the game to work properly outside the Tetris class.
+* My problems with getting the UI separated from the game left the program in a pretty bad state and the tests I first tried to create for the Tetris class could not initialize it because it had references to values in the UI. This left me unable to create more tests at the moment.
 
 ## The user interface
 The program consists of two views:

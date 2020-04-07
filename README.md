@@ -28,3 +28,8 @@ Run the tests and generate a JaCoCo report:
 ```
 mvn test jacoco:report
 ```
+
+Run the Checkstyle tests
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
