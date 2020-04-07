@@ -3,7 +3,7 @@
 ## The purpose of this program
 In this program the user can play the classic video game Tetris. Before the game begins the player has the option to change the background image and the music that is playing (or mute it).
 
-**Progress**
+## Progress
 * [x] The game screen
 * [x] The menu screen
 * [x] Music
