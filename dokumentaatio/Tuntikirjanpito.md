@@ -12,3 +12,4 @@
 |30.3|1| I finished this week's documentation |
 |4.4|3| I created a menu for the game. This took more time than it should have because I tried to get JavaFX Scene Builder to work with NetBeans but there were no instructions on how to do this in the course material and I could not get it to work on my own so in the end I had to make the menu from basic JavaFX code. |
 ||4| I worked on making the program play music and started integrating the menu with the game. |
+|6.4|6| I added Checkstyle to the project and made separate packages for the game logic, the user interface and the main class. I fixed Checkstyle errors and worked on getting the game screen to work outside of the Tetris class. |

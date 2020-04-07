@@ -164,7 +164,5 @@ public class TetrisUi extends Application{
         
         stage.setScene(menuScene);
         stage.show();
-        
-        
     }
 }
