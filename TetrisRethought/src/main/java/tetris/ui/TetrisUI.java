@@ -14,7 +14,7 @@ import tetris.domain.Controller;
 import tetris.domain.Form;
 import tetris.domain.Tetris;
 
-public class TetrisUI extends Application{
+public class TetrisUI extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -51,19 +51,19 @@ public class TetrisUI extends Application{
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
-                case RIGHT:
-                    tetris.controller.moveRight(form, tetris.mesh);
-                    break;
-                case DOWN:
-                    tetris.moveDown(form);
-                    tetris.score++;
-                    break;
-                case LEFT:
-                    tetris.controller.moveLeft(form, tetris.mesh);
-                    break;
-                case UP:
-                    tetris.moveTurn(form);
-                    break;
+                    case RIGHT:
+                        tetris.controller.moveRight(form, tetris.mesh);
+                        break;
+                    case DOWN:
+                        tetris.moveDown(form);
+                        tetris.score++;
+                        break;
+                    case LEFT:
+                        tetris.controller.moveLeft(form, tetris.mesh);
+                        break;
+                    case UP:
+                        tetris.moveTurn(form);
+                        break;
                 }
             }
         });

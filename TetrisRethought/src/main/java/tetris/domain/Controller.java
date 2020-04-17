@@ -142,4 +142,325 @@ public class Controller {
         d.setX(xmax / 2 + size);
         name = "i";
     }
+    
+    //Assisting methods for rotating the polygons in Tetris with moveTurn()
+    public void moveTurnJ(Form form, int f, Rectangle a, Rectangle b, Rectangle c, Rectangle d, Tetris tetris) {
+        if (f == 1 && tetris.cB(a, 1, -1) && tetris.cB(c, -1, -1) && tetris.cB(d, -2, -2)) {
+            moveJCase1(form, tetris);
+        } else if (f == 2 && tetris.cB(a, -1, -1) && tetris.cB(c, -1, 1) && tetris.cB(d, -2, 2)) {
+            moveJCase2(form, tetris);
+        } else if (f == 3 && tetris.cB(a, -1, 1) && tetris.cB(c, 1, 1) && tetris.cB(d, 2, 2)) {
+            moveJCase3(form, tetris);
+        } else if (f == 4 && tetris.cB(a, 1, 1) && tetris.cB(c, 1, -1) && tetris.cB(d, 2, -2)) {
+            moveJCase4(form, tetris);
+        }
+    }
+    
+    public void moveTurnL(Form form, int f, Rectangle a, Rectangle b, Rectangle c, Rectangle d, Tetris tetris) {
+        if (f == 1 && tetris.cB(a, 1, -1) && tetris.cB(c, 1, 1) && tetris.cB(b, 2, 2)) {
+            moveLCase1(form, tetris);
+        } else if (f == 2 && tetris.cB(a, -1, -1) && tetris.cB(b, 2, -2) && tetris.cB(c, 1, -1)) {
+            moveLCase2(form, tetris);
+        } else if (f == 3 && tetris.cB(a, -1, 1) && tetris.cB(c, -1, -1) && tetris.cB(b, -2, -2)) {
+            moveLCase3(form, tetris);
+        } else if (f == 4 && tetris.cB(a, 1, 1) && tetris.cB(b, -2, 2) && tetris.cB(c, -1, 1)) {
+            moveLCase4(form, tetris);
+        }
+    }
+    
+    public void moveTurnS(Form form, int f, Rectangle a, Rectangle b, Rectangle c, Rectangle d, Tetris tetris) {
+        if (f == 1 && tetris.cB(a, -1, -1) && tetris.cB(c, -1, 1) && tetris.cB(d, 0, 2)) {
+            moveSCase1(form, tetris);
+        } else if (f == 2 && tetris.cB(a, 1, 1) && tetris.cB(c, 1, -1) && tetris.cB(d, 0, -2)) {
+            moveSCase2(form, tetris);
+        } else if (f == 3 && tetris.cB(a, -1, -1) && tetris.cB(c, -1, 1) && tetris.cB(d, 0, 2)) {
+            moveSCase3(form, tetris);
+        } else if (f == 4 && tetris.cB(a, 1, 1) && tetris.cB(c, 1, -1) && tetris.cB(d, 0, -2)) {
+            moveSCase4(form, tetris);
+        }
+    }
+    
+    public void moveTurnT(Form form, int f, Rectangle a, Rectangle b, Rectangle c, Rectangle d, Tetris tetris) {
+        if (f == 1 && tetris.cB(a, 1, 1) && tetris.cB(d, -1, -1) && tetris.cB(c, -1, 1)) {
+            moveTCase1(form, tetris);
+        } else if (f == 2 && tetris.cB(a, 1, -1) && tetris.cB(d, -1, 1) && tetris.cB(c, 1, 1)) {
+            moveTCase2(form, tetris);
+        } else if (f == 3 && tetris.cB(a, -1, -1) && tetris.cB(d, 1, 1) && tetris.cB(c, 1, -1)) {
+            moveTCase3(form, tetris);
+        } else if (f == 4 && tetris.cB(a, -1, 1) && tetris.cB(d, 1, -1) && tetris.cB(c, -1, -1)) {
+            moveTCase4(form, tetris);
+        }
+    }
+    
+    public void moveTurnZ(Form form, int f, Rectangle a, Rectangle b, Rectangle c, Rectangle d, Tetris tetris) {
+        if (f == 1 && tetris.cB(b, 1, 1) && tetris.cB(c, -1, 1) && tetris.cB(d, -2, 0)) {
+            moveZCase1(form, tetris);
+        } else if (f == 2 && tetris.cB(b, -1, -1) && tetris.cB(c, 1, -1) && tetris.cB(d, 2, 0)) {
+            moveZCase2(form, tetris);
+        } else if (f == 3 && tetris.cB(b, 1, 1) && tetris.cB(c, -1, 1) && tetris.cB(d, -2, 0)) {
+            moveZCase3(form, tetris);
+        } else if (f == 4 && tetris.cB(b, -1, -1) && tetris.cB(c, 1, -1) && tetris.cB(d, 2, 0)) {
+            moveZCase4(form, tetris);
+        }
+    }
+    
+    public void moveTurnI(Form form, int f, Rectangle a, Rectangle b, Rectangle c, Rectangle d, Tetris tetris) {
+        if (f == 1 && tetris.cB(a, 2, 2) && tetris.cB(b, 1, 1) && tetris.cB(d, -1, -1)) {
+            moveICase1(form, tetris);
+        } else if (f == 2 && tetris.cB(a, -2, -2) && tetris.cB(b, -1, -1) && tetris.cB(d, 1, 1)) {
+            moveICase2(form, tetris);
+        } else if (f == 3 && tetris.cB(a, 2, 2) && tetris.cB(b, 1, 1) && tetris.cB(d, -1, -1)) {
+            moveICase3(form, tetris);
+        } else if (f == 4 && tetris.cB(a, -2, -2) && tetris.cB(b, -1, -1) && tetris.cB(d, 1, 1)) {
+            moveICase4(form, tetris);
+        }
+    }
+    
+    
+    //Sub methods for the assisting methods above
+    //j
+    public void moveJCase1(Form form, Tetris tetris) {
+        tetris.moveRight(form.a);
+        tetris.moveDown(form.a);
+        tetris.moveDown(form.c);
+        tetris.moveLeft(form.c);
+        tetris.moveDown(form.d);
+        tetris.moveDown(form.d);
+        tetris.moveLeft(form.d);
+        tetris.moveLeft(form.d);
+        form.changeForm();
+    }
+    public void moveJCase2(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        tetris.moveLeft(form.d);
+        tetris.moveLeft(form.d);
+        tetris.moveUp(form.d);
+        tetris.moveUp(form.d);
+        form.changeForm();
+    }
+    public void moveJCase3(Form form, Tetris tetris) {
+        tetris.moveLeft(form.a);
+        tetris.moveUp(form.a);
+        tetris.moveUp(form.c);
+        tetris.moveRight(form.c);
+        tetris.moveUp(form.d);
+        tetris.moveUp(form.d);
+        tetris.moveRight(form.d);
+        tetris.moveRight(form.d);
+        form.changeForm();
+    }
+    public void moveJCase4(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        tetris.moveRight(form.d);
+        tetris.moveRight(form.d);
+        tetris.moveDown(form.d);
+        tetris.moveDown(form.d);
+        form.changeForm();
+    }
+    //l
+    public void moveLCase1(Form form, Tetris tetris) {
+        tetris.moveRight(form.a);
+        tetris.moveDown(form.a);
+        tetris.moveUp(form.c);
+        tetris.moveRight(form.c);
+        tetris.moveUp(form.b);
+        tetris.moveUp(form.b);
+        tetris.moveRight(form.b);
+        tetris.moveRight(form.b);
+        form.changeForm();
+    }
+    public void moveLCase2(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveRight(form.b);
+        tetris.moveRight(form.b);
+        tetris.moveDown(form.b);
+        tetris.moveDown(form.b);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        form.changeForm();
+    }
+    public void moveLCase3(Form form, Tetris tetris) {
+        tetris.moveLeft(form.a);
+        tetris.moveUp(form.a);
+        tetris.moveDown(form.c);
+        tetris.moveLeft(form.c);
+        tetris.moveDown(form.b);
+        tetris.moveDown(form.b);
+        tetris.moveLeft(form.b);
+        tetris.moveLeft(form.b);
+        form.changeForm();
+    }
+    public void moveLCase4(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveLeft(form.b);
+        tetris.moveLeft(form.b);
+        tetris.moveUp(form.b);
+        tetris.moveUp(form.b);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        form.changeForm();
+    }
+    //s
+    public void moveSCase1(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        tetris.moveUp(form.d);
+        tetris.moveUp(form.d);
+        form.changeForm();
+    }
+    public void moveSCase2(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        tetris.moveDown(form.d);
+        tetris.moveDown(form.d);
+        form.changeForm();
+    }
+    public void moveSCase3(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        tetris.moveUp(form.d);
+        tetris.moveUp(form.d);
+        form.changeForm();
+    }
+    public void moveSCase4(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        tetris.moveDown(form.d);
+        tetris.moveDown(form.d);
+        form.changeForm();
+    }
+    //t
+    public void moveTCase1(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveDown(form.d);
+        tetris.moveLeft(form.d);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        form.changeForm();
+    }
+    public void moveTCase2(Form form, Tetris tetris) {
+        tetris.moveRight(form.a);
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.d);
+        tetris.moveUp(form.d);
+        tetris.moveUp(form.c);
+        tetris.moveRight(form.c);
+    }
+    public void moveTCase3(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveUp(form.d);
+        tetris.moveRight(form.d);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        form.changeForm();
+    }
+    public void moveTCase4(Form form, Tetris tetris) {
+        tetris.moveLeft(form.a);
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.d);
+        tetris.moveDown(form.d);
+        tetris.moveDown(form.c);
+        tetris.moveLeft(form.c);
+        form.changeForm();
+    }
+    //z
+    public void moveZCase1(Form form, Tetris tetris) {
+        tetris.moveUp(form.b);
+        tetris.moveRight(form.b);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        tetris.moveLeft(form.d);
+        tetris.moveLeft(form.d);
+        form.changeForm();
+    }
+    public void moveZCase2(Form form, Tetris tetris) {
+        tetris.moveDown(form.b);
+        tetris.moveLeft(form.b);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        tetris.moveRight(form.d);
+        tetris.moveRight(form.d);
+        form.changeForm();
+    }
+    public void moveZCase3(Form form, Tetris tetris) {
+        tetris.moveUp(form.b);
+        tetris.moveRight(form.b);
+        tetris.moveLeft(form.c);
+        tetris.moveUp(form.c);
+        tetris.moveLeft(form.d);
+        tetris.moveLeft(form.d);
+        form.changeForm();
+    }
+    public void moveZCase4(Form form, Tetris tetris) {
+        tetris.moveDown(form.b);
+        tetris.moveLeft(form.b);
+        tetris.moveRight(form.c);
+        tetris.moveDown(form.c);
+        tetris.moveRight(form.d);
+        tetris.moveRight(form.d);
+        form.changeForm();
+    }
+    //i
+    public void moveICase1(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveUp(form.b);
+        tetris.moveRight(form.b);
+        tetris.moveDown(form.d);
+        tetris.moveLeft(form.d);
+        form.changeForm();
+    }
+    public void moveICase2(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveDown(form.b);
+        tetris.moveLeft(form.b);
+        tetris.moveUp(form.d);
+        tetris.moveRight(form.d);
+        form.changeForm();
+    }
+    public void moveICase3(Form form, Tetris tetris) {
+        tetris.moveUp(form.a);
+        tetris.moveUp(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveRight(form.a);
+        tetris.moveUp(form.b);
+        tetris.moveRight(form.b);
+        tetris.moveDown(form.d);
+        tetris.moveLeft(form.d);
+        form.changeForm();
+    }
+    public void moveICase4(Form form, Tetris tetris) {
+        tetris.moveDown(form.a);
+        tetris.moveDown(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveLeft(form.a);
+        tetris.moveDown(form.b);
+        tetris.moveLeft(form.b);
+        tetris.moveUp(form.d);
+        tetris.moveRight(form.d);
+        form.changeForm();
+    }
 }

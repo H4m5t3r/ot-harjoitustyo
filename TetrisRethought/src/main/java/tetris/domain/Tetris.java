@@ -64,6 +64,7 @@ public class Tetris {
         }
     }
     
+    //Boolean methods for the different parts of the pylygon
     public boolean moveA(Form form) {
         return (mesh[(int) form.a.getX() / size][((int) form.a.getY() / size) + 1] == 1);
     }
@@ -80,10 +81,46 @@ public class Tetris {
         return (mesh[(int) form.d.getX() / size][((int) form.d.getY() / size) + 1] == 1);
     }
     
+    //Boolean function that is used to check if the rectangles can be moved 
+    //in moveTurn() without moving outside of the allowed area
+    public boolean cB(Rectangle rect, int x, int y) {
+        boolean xb = false;
+        boolean yb = false;
+        if (x >= 0) {
+            xb = rect.getX() + x * move <= xmax - size;
+        }
+        if (x < 0) {
+            xb = rect.getX() + x * move >= 0;
+        }
+        if (y >= 0) {
+            yb = rect.getY() - y * move > 0;
+        }
+        if (y < 0) {
+            yb = rect.getY() + y * move < ymax;
+        }
+        return xb && yb && mesh[((int) rect.getX() / size) + x][((int) rect.getY() / size) - y] == 0;
+    }
+    
     
     //Longer methods that are divided into smaller parts
+    
+    //Turns the polygon
+    //"o" is not included since nothing needs to be done with it
     public void moveTurn(Form form) {
-        
+        int f = form.form;
+        if (form.getName().equals("j")) {
+            controller.moveTurnJ(form, f, form.a, form.b, form.c, form.d, this);
+        } else if (form.getName().equals("l")) {
+            controller.moveTurnL(form, f, form.a, form.b, form.c, form.d, this);
+        } else if (form.getName().equals("s")) {
+            controller.moveTurnS(form, f, form.a, form.b, form.c, form.d, this);
+        } else if (form.getName().equals("t")) {
+            controller.moveTurnT(form, f, form.a, form.b, form.c, form.d, this);
+        } else if (form.getName().equals("z")) {
+            controller.moveTurnZ(form, f, form.a, form.b, form.c, form.d, this);
+        } else if (form.getName().equals("i")) {
+            controller.moveTurnI(form, f, form.a, form.b, form.c, form.d, this);
+        }
     }
     
     public void moveDown(Form form) {
