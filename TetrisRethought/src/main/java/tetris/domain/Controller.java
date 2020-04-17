@@ -17,7 +17,7 @@ public class Controller {
     }
     
     
-    public void MoveRight(Form form, int[][] mesh) {
+    public void moveRight(Form form, int[][] mesh) {
         if (form.a.getX() + move <= xmax - size && form.b.getX() + move <= xmax - size
                     && form.c.getX() + move <= xmax - size && form.d.getX() + move <= xmax - size) {
             int movea = mesh[((int) form.a.getX() / size) + 1][((int) form.a.getY() / size)];
@@ -34,7 +34,7 @@ public class Controller {
     }
     
     
-    public void MoveLeft(Form form, int[][] mesh) {
+    public void moveLeft(Form form, int[][] mesh) {
         if (form.a.getX() - move >= 0 && form.b.getX() - move >= 0 && form.c.getX() - move >= 0
                     && form.d.getX() - move >= 0) {
             int movea = mesh[((int) form.a.getX() / size) - 1][((int) form.a.getY() / size)];
@@ -51,11 +51,10 @@ public class Controller {
     }
     
     
-    public Form makeRect() {
+    public Form makeRect() { 
         int block = (int) (Math.random() * 100);
         String name = "";
-        Rectangle a = new Rectangle(size - 1, size - 1), b = new Rectangle(size - 1, size - 1), c = new Rectangle(size - 1, size - 1),
-                    d = new Rectangle(size - 1, size - 1);
+        Rectangle a = new Rectangle(size - 1, size - 1), b = new Rectangle(size - 1, size - 1), c = new Rectangle(size - 1, size - 1), d = new Rectangle(size - 1, size - 1);
         if (block < 15) { 
             j(a, b, c, d, name);
         } else if (block < 30) { 

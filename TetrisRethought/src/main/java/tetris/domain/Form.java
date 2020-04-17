@@ -5,10 +5,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Form {
-    Rectangle a;
-    Rectangle b;
-    Rectangle c;
-    Rectangle d;
+    public Rectangle a;
+    public Rectangle b;
+    public Rectangle c;
+    public Rectangle d;
     Color color;
     private String name;
     public int form = 1;
@@ -22,28 +22,27 @@ public class Form {
         this.name = name;
 
         switch (name) {
-        case "j":
+            case "j":
                 color = Color.SLATEGRAY;
                 break;
-        case "l":
+            case "l":
                 color = Color.DARKGOLDENROD;
                 break;
-        case "o":
+            case "o":
                 color = Color.INDIANRED;
                 break;
-        case "s":
+            case "s":
                 color = Color.FORESTGREEN;
                 break;
-        case "t":
+            case "t":
                 color = Color.CADETBLUE;
                 break;
-        case "z":
+            case "z":
                 color = Color.HOTPINK;
                 break;
-        case "i":
+            case "i":
                 color = Color.SANDYBROWN;
                 break;
-
         }
         this.a.setFill(color);
         this.b.setFill(color);
@@ -52,14 +51,18 @@ public class Form {
     }
     
     public String getName() {
-        return name;
+        return this.name;
+    }
+    
+    public Color getColor() {
+        return this.color;
     }
     
     public void changeForm() {
         if (form != 4) {
-                form++;
+            form++;
         } else {
-                form = 1;
+            form = 1;
         }
     }
 }
