@@ -5,10 +5,10 @@ import javafx.scene.shape.Rectangle;
 
 public class Controller {
     //getting numbers and MESH from Tetris class
-    public static final int MOVE = Tetris.MOVE;
-    public static final int SIZE = Tetris.SIZE;
-    public static int xmax = Tetris.XMAX;
-    public static int ymax = Tetris.YMAX;
+    public static final int MOVE = Tetris.move;
+    public static final int SIZE = Tetris.size;
+    public static int xmax = Tetris.xmax;
+    public static int ymax = Tetris.ymax;
     public static int[][] mesh = Tetris.mesh;
     
     //moving the polygons

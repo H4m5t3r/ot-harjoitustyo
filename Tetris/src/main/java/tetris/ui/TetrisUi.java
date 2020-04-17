@@ -45,14 +45,14 @@ public class TetrisUi extends Application{
     public static final int XMAX = SIZE * 12;
     public static final int YMAX = SIZE * 24;
     public static int[][] MESH = new int[XMAX / SIZE][YMAX / SIZE];
-    public static Pane group = new Pane();
-    public static Form object;
-    public static Scene scene = new Scene(group, XMAX + 150, YMAX);
-    public static int score = 0;
-    public static int top = 0;
-    private static boolean game = true;
-    public static Form nextObj = Controller.makeRect();
-    public static int linesNo = 0;
+    public static Pane group = Tetris.group;
+    public static Form object = Tetris.object;
+    public static Scene scene = Tetris.scene;
+    public static int score = Tetris.score;
+    public static int top = Tetris.top;
+    private static boolean game = Tetris.game;
+    public static Form nextObj = Tetris.nextObj;
+    public static int linesNo = Tetris.linesNo;
     private static Button backToMenu = new Button("Menu");
     
     public void start(Stage stage) throws Exception {

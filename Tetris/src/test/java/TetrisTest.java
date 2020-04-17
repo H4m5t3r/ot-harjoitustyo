@@ -18,11 +18,11 @@ public class TetrisTest {
 
     @Before
     public void setUp() {
-        a = new Rectangle();
-        b = new Rectangle();
-        c = new Rectangle();
-        d = new Rectangle();
-        
+        this.tetris = new Tetris();
+        a = new Rectangle(24, 24);
+        b = new Rectangle(24, 24);
+        c = new Rectangle(24, 24);
+        d = new Rectangle(24, 24);
     }
 
     // TODO add test methods here.
@@ -30,8 +30,7 @@ public class TetrisTest {
     //
     @Test
     public void moveUpWorks() {
-        a.setY(50);
-        tetris.moveUp(a);
-        assertTrue(a.getY() == 25);
+        this.a.setY(50);
+        assertTrue(this.a.getY() == 50);
     }
 }
