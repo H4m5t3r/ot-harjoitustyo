@@ -16,6 +16,7 @@ public class Main {
     
     public static void main(String[] args) {
         System.out.println("Hello");
+        TetrisUI.main(args);
 //        Logic logic = new Logic();
         //controllern ska tydligen vara kopplad till UIn? new Controller(logic);
 //        logic.run(); //borde "run" med 100ms eller kortare paus emellan
