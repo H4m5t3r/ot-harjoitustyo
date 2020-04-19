@@ -5,12 +5,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tetris.domain.Form;
-import tetris.domain.Tetris;
+import domain.Tetramino;
+import domain.Logic;
 
 public class TetrisTest {
-    Form form;
-    Tetris tetris;
+    Tetramino form;
+    Logic tetris;
     Rectangle a;
     Rectangle b;
     Rectangle c;
@@ -18,7 +18,7 @@ public class TetrisTest {
 
     @Before
     public void setUp() {
-        this.tetris = new Tetris();
+        this.tetris = new Logic();
         a = new Rectangle(24, 24);
         b = new Rectangle(24, 24);
         c = new Rectangle(24, 24);

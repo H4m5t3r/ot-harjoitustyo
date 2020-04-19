@@ -27,6 +27,7 @@ public class ControllerTest {
     public void rightForm(){
         for (int i = 0; i < 100; i++){
             this.form = controller.makeRect();
+            System.out.println(this.form.a.getY());
             if (form.getName().equals("j")){
                 //Add this.form.a.getX() == ... to the tests
                 assertTrue(this.form.getName().equals("j"));

@@ -33,3 +33,8 @@ Run the Checkstyle tests
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
+
+Create a jar file
+```
+mvn package
+```

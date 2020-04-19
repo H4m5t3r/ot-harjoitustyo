@@ -3,11 +3,11 @@ import javafx.scene.shape.Rectangle;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tetris.domain.Form;
+import domain.Tetramino;
 
 public class FormTest {
 
-    Form form;
+    Tetramino form;
     Rectangle a;
     Rectangle b;
     Rectangle c;
@@ -24,7 +24,7 @@ public class FormTest {
     //Checks that the polygons are in the right "mode" after they are rotated
     @Test
     public void rightFormAfterFormChange(){
-        form = new Form(a, b, c, d, "t");
+        form = new Tetramino(a, b, c, d, "t");
         assertTrue(form.form == 1);
         form.changeForm();
         assertTrue(form.form == 2);
@@ -38,25 +38,25 @@ public class FormTest {
     
     @Test
     public void rightColor(){
-        form = new Form(a, b, c, d, "j");
+        form = new Tetramino(a, b, c, d, "j");
         assertTrue(form.getColor() == Color.SLATEGRAY);
-        form = new Form(a, b, c, d, "l");
+        form = new Tetramino(a, b, c, d, "l");
         assertTrue(form.getColor() == Color.DARKGOLDENROD);
-        form = new Form(a, b, c, d, "o");
+        form = new Tetramino(a, b, c, d, "o");
         assertTrue(form.getColor() == Color.INDIANRED);
-        form = new Form(a, b, c, d, "s");
+        form = new Tetramino(a, b, c, d, "s");
         assertTrue(form.getColor() == Color.FORESTGREEN);
-        form = new Form(a, b, c, d, "t");
+        form = new Tetramino(a, b, c, d, "t");
         assertTrue(form.getColor() == Color.CADETBLUE);
-        form = new Form(a, b, c, d, "z");
+        form = new Tetramino(a, b, c, d, "z");
         assertTrue(form.getColor() == Color.HOTPINK);
-        form = new Form(a, b, c, d, "i");
+        form = new Tetramino(a, b, c, d, "i");
         assertTrue(form.getColor() == Color.SANDYBROWN);
     }
     
     @Test
     public void regularConstructorWorks(){
-        form = new Form(a, b, c, d);
+        form = new Tetramino(a, b, c, d);
         assertTrue(form.a == this.a);
         assertTrue(form.b == this.b);
         assertTrue(form.c == this.c);
@@ -65,7 +65,7 @@ public class FormTest {
     
     @Test
     public void getNameWorks(){
-        form = new Form(a, b, c, d, "z");
+        form = new Tetramino(a, b, c, d, "z");
         assertTrue(form.getName().equals("z"));
     }
 }

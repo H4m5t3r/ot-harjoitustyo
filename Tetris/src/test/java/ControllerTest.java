@@ -5,14 +5,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tetris.domain.Controller;
-import static tetris.domain.Controller.SIZE;
-import static tetris.domain.Controller.makeRect;
-import static tetris.domain.Controller.xmax;
-import tetris.domain.Form;
+import domain.Controller;
+import static domain.Controller.SIZE;
+import static domain.Controller.makeRect;
+import static domain.Controller.xmax;
+import domain.Tetramino;
 
 public class ControllerTest {
-    Form form;
+    Tetramino form;
     Rectangle rectangle;
     
     public ControllerTest() {

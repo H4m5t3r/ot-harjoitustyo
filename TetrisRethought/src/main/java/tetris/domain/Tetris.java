@@ -4,6 +4,7 @@ package tetris.domain;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
 public class Tetris {
@@ -123,7 +124,25 @@ public class Tetris {
         }
     }
     
+    
     public void moveDown(Form form) {
-        
+        moveDownPhase1(form);
+    }
+
+    private void moveDownPhase1(Form form, Form nextObj, Form object) {
+        if (form.a.getY() == ymax - size || form.b.getY() == ymax - size || form.c.getY() == ymax - size
+                || form.d.getY() == ymax - size || moveA(form) || moveB(form) || moveC(form) || moveD(form)) {
+            mesh[(int) form.a.getX() / size][(int) form.a.getY() / size] = 1;
+            mesh[(int) form.b.getX() / size][(int) form.b.getY() / size] = 1;
+            mesh[(int) form.c.getX() / size][(int) form.c.getY() / size] = 1;
+            mesh[(int) form.d.getX() / size][(int) form.d.getY() / size] = 1;
+            RemoveRows(group);
+
+            Form a = nextObj;
+            nextObj = controller.makeRect();
+            object = a;
+            group.getChildren().addAll(a.a, a.b, a.c, a.d);
+            moveOnKeyPress(a);
+        }
     }
 }

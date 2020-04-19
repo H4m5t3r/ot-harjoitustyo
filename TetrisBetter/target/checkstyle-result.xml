@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/main/Main.java">
+</file>
+<file name="/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Logic.java">
+</file>
+<file name="/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Stage.java">
+</file>
+<file name="/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Tetramino.java">
+</file>
+<file name="/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Pair.java">
+</file>
+<file name="/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Controller.java">
+</file>
+</checkstyle>

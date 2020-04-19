@@ -18,3 +18,5 @@
 ||4| I tried to make the game work when the user interface is separated from the Tetris class. Right now it does not work properly and causes errors for some reason. |
 ||1| I tried to create more tests but ran into trouble since the variables in the Tetris class have been moved. When the tests start they fail to initialize the class since it includes variables that at the moment refer values in TetrisUI. |
 ||1| Updated the documentation. |
+|16.4|5| I decided to redesign the structure of the game to correct the Checkstyle errors and hopfully fix some bugs at the same time. |
+|17.4|6| I started rebuilding the game in a new folder called "TetrisRethought". |
