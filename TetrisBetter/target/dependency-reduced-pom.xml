@@ -26,13 +26,15 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <excludes>
+            <exclude>todoapp/ui/**/*</exclude>
+          </excludes>
+        </configuration>
       </plugin>
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19.1</version>
-        <configuration>
-          <testFailureIgnore>true</testFailureIgnore>
-        </configuration>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
       </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -57,7 +59,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>tetris.main.Main</mainClass>
+                  <mainClass>tetris.domain.TetrisUI</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -72,17 +74,17 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>hamcrest-core</artifactId>
-          <groupId>org.hamcrest</groupId>
-        </exclusion>
-      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <properties>
-    <maven.compiler.target>11</maven.compiler.target>
-    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>
