@@ -10,10 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
  * @author taleiko
  */
 public class TetrisUI extends Application {
+    //JavaFX
     private Scene menuScene;
     private BorderPane menuPane;
     private GridPane menuElements;
@@ -35,9 +37,13 @@ public class TetrisUI extends Application {
     private Scene gameScene;
     private Pane gamePane;
     
+    //Game logic
+    Logic logic;
+    
 
     @Override
     public void init() {
+        //JavaFX
         menuPane = new BorderPane();
         newGame = new Button("Start a new game");
         menuElements = new GridPane();
@@ -47,6 +53,9 @@ public class TetrisUI extends Application {
         piano = new Button("Piano");
         trumpet = new Button("Trumpet");
         musicButtons = new VBox();
+        
+        //Dependencies
+        logic = new Logic();
     }
     
     @Override
@@ -68,6 +77,13 @@ public class TetrisUI extends Application {
         
         //The game screen
         gamePane = new Pane();
+        Text text = new Text("fdss");
+        text.setX(0);
+        
+        Rectangle rect = new Rectangle(24, 24);
+        rect.setX(40);
+        rect.setY(20);
+        gamePane.getChildren().add(rect);
         gameScene = new Scene(gamePane, 500, 500);
         
         
@@ -75,8 +91,8 @@ public class TetrisUI extends Application {
         menuScene = new Scene(menuPane, 500, 500);
         
         newGame.setOnAction((event) -> {
-          ikkuna.setScene(gameScene);
-      });
+            ikkuna.setScene(gameScene);
+        });
         
         ikkuna.setScene(menuScene);
         ikkuna.show();
@@ -84,8 +100,7 @@ public class TetrisUI extends Application {
     
     @Override
     public void stop() {
-      // tee lopetustoimenpiteet täällä
-      System.out.println("Game closing");
+        System.out.println("Game closing");
     }
     
     public static void main(String[] args) {

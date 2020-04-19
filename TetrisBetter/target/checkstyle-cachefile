@@ -1,7 +1,7 @@
-#Sun Apr 19 12:19:37 EEST 2020
-configuration*?=FB74C2DAE65B37959A89343C3CD411EE392C5496
-/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Controller.java=1587285446621
-/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Stage.java=1587287425873
-/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Logic.java=1587287691517
-/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/main/Main.java=1587286340656
-/home/taleiko/NetBeansProjects/TetrisBetter/src/main/java/tetris/domain/Tetramino.java=1587287407156
+#Sun Apr 19 19:36:11 EEST 2020
+/home/taleiko/Documents/Ohjelmistotekniikka/ot-harjoitustyo/TetrisBetter/src/main/java/tetris/domain/Stage.java=1587314165259
+configuration*?=A3FF1D9106D2A79CAB9EA04FD922498D86B531C4
+/home/taleiko/Documents/Ohjelmistotekniikka/ot-harjoitustyo/TetrisBetter/src/main/java/tetris/domain/Controller.java=1587292633366
+/home/taleiko/Documents/Ohjelmistotekniikka/ot-harjoitustyo/TetrisBetter/src/main/java/tetris/domain/TetrisUI.java=1587314162015
+/home/taleiko/Documents/Ohjelmistotekniikka/ot-harjoitustyo/TetrisBetter/src/main/java/tetris/domain/Main.java=1587307929207
+/home/taleiko/Documents/Ohjelmistotekniikka/ot-harjoitustyo/TetrisBetter/src/main/java/tetris/domain/Logic.java=1587292633370

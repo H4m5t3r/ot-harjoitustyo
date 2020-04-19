@@ -12,6 +12,17 @@ package tetris.domain;
 public class Stage {
     
     private Block[][] blockGrid;
+    
+    public Stage() {
+        //Creates a 12*24 grid with walls outside that are 4 wide
+        //The actual play area:
+        //width: 4-15, height: 4-27
+        this.blockGrid = new Block[28][20];
+//        for (int i = 0; i < ; i++) {
+//            Block[] blocks = blockGrid[i];
+//            
+//        }
+    }
 
     boolean collidesWith(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
@@ -37,9 +48,19 @@ public class Stage {
     }
 
     private static class Block {
+        //x och y onödiga?
+        private int x;
+        private int y;
 
         public Block() {
             
+        }
+        
+        public int getX() {
+            return this.x;
+        }
+        public int getY() {
+            return this.y;
         }
     }
     

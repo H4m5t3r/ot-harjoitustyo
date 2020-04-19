@@ -15,6 +15,10 @@ public class Logic implements Runnable {
     private int dropCounterIncrement = 5; //vi droppar int blocket varje "tick"
     private Tetramino current;
     private Stage stage;
+    
+    public Logic() {
+        this.stage = new Stage();
+    }
 
     @Override
     public void run() {
@@ -22,9 +26,9 @@ public class Logic implements Runnable {
             current = createRandomTetramino();
         }
         if (dropCounter == 0) {
-            current.y++;
+            current.y--;
             if (stage.collidesWith(current)) {
-                current.y--;
+                current.y++;
                 stage.placeTetramino(current);
                 current = null;
             }
@@ -35,23 +39,23 @@ public class Logic implements Runnable {
     }
     
     public void moveLeft() {
-        current.x++;
-        if (stage.collidesWith(current)) {
-            current.x--;
-        }
-    }
-    
-    void moveRight() {
         current.x--;
         if (stage.collidesWith(current)) {
             current.x++;
         }
     }
     
-    public void moveDown() {
-        current.y++;
+    void moveRight() {
+        current.x++;
         if (stage.collidesWith(current)) {
-            current.y--;
+            current.x--;
+        }
+    }
+    
+    public void moveDown() {
+        current.y--;
+        if (stage.collidesWith(current)) {
+            current.y++;
         } else {
             dropCounter += dropCounterIncrement;
         }
