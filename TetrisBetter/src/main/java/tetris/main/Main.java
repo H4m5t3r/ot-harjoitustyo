@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris.domain;
+package tetris.main;
 
 import tetris.domain.Logic;
-import tetris.domain.TetrisUI;
+import tetris.domain.Music;
+import tetris.ui.TetrisUI;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris.domain;
+package tetris.ui;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -17,6 +17,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import tetris.domain.Controller;
+import tetris.domain.Logic;
+import tetris.domain.Music;
 
 /**
  *
@@ -41,6 +44,7 @@ public class TetrisUI extends Application {
     //Game logic
     Logic logic;
     Controller controller;
+    Music musicPlayer;
 
     @Override
     public void init() {
@@ -58,6 +62,7 @@ public class TetrisUI extends Application {
         //Dependencies
         logic = new Logic();
         controller = new Controller(logic);
+        musicPlayer = new Music();
     }
     
     @Override
@@ -111,6 +116,10 @@ public class TetrisUI extends Application {
         
         newGame.setOnAction((event) -> {
             window.setScene(gameScene);
+        });
+        
+        trumpet.setOnAction((event) -> {
+            musicPlayer.PlayMusic("TetrisTrumpet.wav");
         });
         
         window.setScene(menuScene);

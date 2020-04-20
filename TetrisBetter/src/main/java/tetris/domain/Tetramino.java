@@ -31,6 +31,10 @@ public class Tetramino {
         return y;
     }
     
+    public int getRotation() {
+        return this.rotation;
+    }
+    
     public static char[][] rotateCollisionCheck(char[][] toBeRotated) {
         char[][] rotated = new char[4][4];
         rotated[0][0] = toBeRotated[3][0]; //First row

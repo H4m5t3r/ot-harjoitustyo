@@ -15,7 +15,7 @@ public class Controller {
 
     private Logic logic;
     
-    public Controller(Logic logic){
+    public Controller(Logic logic) {
         this.logic = logic;
     }
 
@@ -23,7 +23,7 @@ public class Controller {
         switch (event.getCode()) {
             case RIGHT:
 //                logic.moveRight();
-                    System.out.println("Right");
+                System.out.println("Right");
                 break;
             case DOWN:
 //                logic.moveDown();
