@@ -32,7 +32,24 @@ public class Tetramino {
     }
     
     public static char[][] rotateCollisionCheck(char[][] toBeRotated) {
-        return toBeRotated;
+        char[][] rotated = new char[4][4];
+        rotated[0][0] = toBeRotated[3][0]; //First row
+        rotated[0][1] = toBeRotated[2][0];
+        rotated[0][2] = toBeRotated[1][0];
+        rotated[0][3] = toBeRotated[0][0];
+        rotated[1][0] = toBeRotated[3][1]; //Second row
+        rotated[1][1] = toBeRotated[2][1];
+        rotated[1][2] = toBeRotated[1][1];
+        rotated[1][3] = toBeRotated[0][1];
+        rotated[2][0] = toBeRotated[3][2]; // Third row
+        rotated[2][1] = toBeRotated[2][2];
+        rotated[2][2] = toBeRotated[1][2];
+        rotated[2][3] = toBeRotated[0][2];
+        rotated[3][0] = toBeRotated[3][3]; //Fourth row
+        rotated[3][1] = toBeRotated[2][3];
+        rotated[3][2] = toBeRotated[1][3];
+        rotated[3][3] = toBeRotated[0][3];
+        return rotated; //returns a 90 degree clockwise rotated array
     }
     
     public void rotate() {
@@ -97,9 +114,9 @@ public class Tetramino {
                     };
                 case T:
                     return new char[][] {
+                        {' ', ' ', ' ', ' '},
                         {' ', '#', ' ', ' '},
                         {'#', '#', '#', ' '},
-                        {' ', ' ', ' ', ' '},
                         {' ', ' ', ' ', ' '},
                     };
                 default:
