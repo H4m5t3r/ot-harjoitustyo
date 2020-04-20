@@ -53,6 +53,12 @@ public class TetrisUI extends Application {
 
     @Override
     public void init() {
+        //Dependencies
+        logic = new Logic();
+        controller = new Controller(logic);
+        musicPlayer = new Music();
+        
+        
         //JavaFX
         menuPane = new BorderPane();
         newGame = new Button("Start a new game");
@@ -66,11 +72,6 @@ public class TetrisUI extends Application {
         musicButtons = new VBox();
         backToMenu = new Button("Back to menu");
         line = new Line(600, 0, 600, 300);
-        
-        //Dependencies
-        logic = new Logic();
-        controller = new Controller(logic);
-        musicPlayer = new Music();
     }
     
     @Override
