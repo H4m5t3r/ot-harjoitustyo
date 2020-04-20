@@ -14,6 +14,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -36,10 +38,13 @@ public class TetrisUI extends Application {
     private Button eightBit;
     private Button piano;
     private Button trumpet;
+    private Button stopPlaying;
     private VBox musicButtons;
     
     private Scene gameScene;
     private Pane gamePane;
+    private Button backToMenu;
+    private Line line;
     
     //Game logic
     Logic logic;
@@ -57,7 +62,10 @@ public class TetrisUI extends Application {
         eightBit = new Button("8-bit");
         piano = new Button("Piano");
         trumpet = new Button("Trumpet");
+        stopPlaying = new Button("Stop playing");
         musicButtons = new VBox();
+        backToMenu = new Button("Back to menu");
+        line = new Line(600, 0, 600, 300);
         
         //Dependencies
         logic = new Logic();
@@ -74,6 +82,7 @@ public class TetrisUI extends Application {
         musicButtons.getChildren().add(eightBit);
         musicButtons.getChildren().add(piano);
         musicButtons.getChildren().add(trumpet);
+        musicButtons.getChildren().add(stopPlaying);
         
         menuElements.add(musicButtons, 2, 2);
         
@@ -88,9 +97,12 @@ public class TetrisUI extends Application {
         text.setX(0);
         
         Rectangle rect = new Rectangle(24, 24);
-        rect.setX(40);
-        rect.setY(20);
+        rect.setX(75);
+        rect.setY(50);
+        rect.setFill(Color.HOTPINK);
         gamePane.getChildren().add(rect);
+        gamePane.getChildren().add(backToMenu);
+        gamePane.getChildren().add(line);
         gameScene = new Scene(gamePane, 500, 500);
         
         gameScene.setOnKeyPressed(
@@ -114,12 +126,25 @@ public class TetrisUI extends Application {
         
         menuScene = new Scene(menuPane, 500, 500);
         
+        //Set button actions
         newGame.setOnAction((event) -> {
             window.setScene(gameScene);
         });
         
+        backToMenu.setOnAction((event) -> {
+            window.setScene(menuScene);
+        });
+        
+        piano.setOnAction((event) -> {
+            musicPlayer.playMusic("TetrisPiano.wav");
+        });
+        
         trumpet.setOnAction((event) -> {
-            musicPlayer.PlayMusic("TetrisTrumpet.wav");
+            musicPlayer.playMusic("TetrisTrumpet.wav");
+        });
+        
+        stopPlaying.setOnAction((event) -> {
+            musicPlayer.stopPlaying();
         });
         
         window.setScene(menuScene);

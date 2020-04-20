@@ -19,7 +19,7 @@ public class Music {
         this.playing = false;
     }
     
-    public void PlayMusic(String filepath) {
+    public void playMusic(String filepath) {
         System.out.println(playing);
         if (playing) {
             clip.stop();
@@ -35,7 +35,7 @@ public class Music {
         }
     }
     
-    public void StopPlaying() {
+    public void stopPlaying() {
         if (playing) {
             clip.stop();
             playing = false;
