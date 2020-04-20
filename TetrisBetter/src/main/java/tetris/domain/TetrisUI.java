@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import static javafx.scene.input.KeyCode.DOWN;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -39,7 +40,7 @@ public class TetrisUI extends Application {
     
     //Game logic
     Logic logic;
-    
+    Controller controller;
 
     @Override
     public void init() {
@@ -56,10 +57,11 @@ public class TetrisUI extends Application {
         
         //Dependencies
         logic = new Logic();
+        controller = new Controller(logic);
     }
     
     @Override
-    public void start(Stage ikkuna) throws Exception {
+    public void start(Stage window) throws Exception {
         //The menu
         menuElements.add(newGame, 2, 3);
         menuElements.add(title, 2, 1);
@@ -86,16 +88,33 @@ public class TetrisUI extends Application {
         gamePane.getChildren().add(rect);
         gameScene = new Scene(gamePane, 500, 500);
         
+        gameScene.setOnKeyPressed(
+                event -> {
+                    switch (event.getCode()) {
+                        case DOWN:
+                            controller.handle(event);
+                            break;
+                        case UP:
+                            controller.handle(event);
+                            break;
+                        case LEFT:
+                            controller.handle(event);
+                            break;
+                        case RIGHT:
+                            controller.handle(event);
+                            break;
+                    }
+                });
         
         
         menuScene = new Scene(menuPane, 500, 500);
         
         newGame.setOnAction((event) -> {
-            ikkuna.setScene(gameScene);
+            window.setScene(gameScene);
         });
         
-        ikkuna.setScene(menuScene);
-        ikkuna.show();
+        window.setScene(menuScene);
+        window.show();
     }
     
     @Override

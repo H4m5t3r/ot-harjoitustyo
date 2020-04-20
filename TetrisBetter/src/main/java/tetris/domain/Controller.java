@@ -14,20 +14,28 @@ import javafx.scene.input.KeyEvent;
 public class Controller {
 
     private Logic logic;
+    
+    public Controller(Logic logic){
+        this.logic = logic;
+    }
 
     public void handle(KeyEvent event) {
         switch (event.getCode()) {
             case RIGHT:
-                logic.moveRight(); //copy pom & import - t waffe
+//                logic.moveRight();
+                    System.out.println("Right");
                 break;
             case DOWN:
-                logic.moveDown();
+//                logic.moveDown();
+                System.out.println("DownPrint");
                 break;
             case LEFT:
-                logic.moveLeft();
+//                logic.moveLeft();
+                System.out.println("Left");
                 break;
             case UP:
-                logic.rotate();
+//                logic.rotate();
+                System.out.println("Up");
                 break;
             default:
                 break;

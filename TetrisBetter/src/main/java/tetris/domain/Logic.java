@@ -5,6 +5,17 @@
  */
 package tetris.domain;
 
+import java.util.Timer;
+import java.util.TimerTask;
+import tetris.domain.Tetramino.Shape;
+import static tetris.domain.Tetramino.Shape.I;
+import static tetris.domain.Tetramino.Shape.J;
+import static tetris.domain.Tetramino.Shape.L;
+import static tetris.domain.Tetramino.Shape.O;
+import static tetris.domain.Tetramino.Shape.S;
+import static tetris.domain.Tetramino.Shape.T;
+import static tetris.domain.Tetramino.Shape.Z;
+
 /**
  *
  * @author taleiko
@@ -12,7 +23,7 @@ package tetris.domain;
 public class Logic implements Runnable {
     
     private int dropCounter;
-    private int dropCounterIncrement = 5; //vi droppar int blocket varje "tick"
+    private int dropCounterIncrement = 5; //we drop the block every "tick"
     private Tetramino current;
     private Stage stage;
     
@@ -20,6 +31,7 @@ public class Logic implements Runnable {
         this.stage = new Stage();
     }
 
+    
     @Override
     public void run() {
         if (current == null) {
@@ -37,6 +49,7 @@ public class Logic implements Runnable {
             dropCounter--;
         }
     }
+    
     
     public void moveLeft() {
         current.x--;
@@ -62,9 +75,27 @@ public class Logic implements Runnable {
     }
 
     private Tetramino createRandomTetramino() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Shape randomShape = createRandomEnum();
+        return new Tetramino(0, 9, randomShape);
     }
 
+    private Shape createRandomEnum() {
+        int tetraminoShape = (int) (Math.random() * 100);
+        if (tetraminoShape < 15) {
+            return J;
+        } else if (tetraminoShape < 30) {
+            return L;
+        } else if (tetraminoShape < 45) {
+            return O;
+        } else if (tetraminoShape < 60) {
+            return S;
+        } else if (tetraminoShape < 75) {
+            return T;
+        } else if (tetraminoShape < 90) {
+            return Z;
+        }
+        return I;
+    }
     
     void rotate() {
         current.rotate();
