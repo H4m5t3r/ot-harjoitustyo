@@ -27,4 +27,17 @@ public class StageTest {
         assertTrue(stage.collidesWith(collides) == true);
         assertTrue(stage.collidesWith(doesNotCollide) == false);
     }
+    
+    @Test
+    public void placeTetraminoWorks() {
+        assertTrue(stage.getBlock(1, 12) == ' ');
+        assertTrue(stage.getBlock(1, 13) == ' ');
+        assertTrue(stage.getBlock(1, 14) == ' ');
+        assertTrue(stage.getBlock(1, 15) == ' ');
+        stage.placeTetramino(doesNotCollide);
+        assertTrue(stage.getBlock(1, 12) == '#');
+        assertTrue(stage.getBlock(1, 13) == '#');
+        assertTrue(stage.getBlock(1, 14) == '#');
+        assertTrue(stage.getBlock(1, 15) == '#');
+    }
 }

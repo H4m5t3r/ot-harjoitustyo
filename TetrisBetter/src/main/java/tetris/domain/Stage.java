@@ -29,17 +29,22 @@ public class Stage {
                 blockGrid[i][j] = '#';
             }
         }
+        //"Floor"
         for (int i = 24; i < 28; i++) {
             for (int j = 0; j < 20; j++) {
                 blockGrid[i][j] = '#';
             }
         }
-        //The playing area
+        //The play area
         for (int i = 0; i < blockGrid.length - 4; i++) {
             for (int j = 4; j < 16; j++) {
                 blockGrid[i][j] = ' ';
             }
         }
+    }
+    
+    public char getBlock(int x, int y) {
+        return blockGrid[x][y];
     }
 
     public boolean collidesWith(Tetramino tetramino) {
@@ -54,7 +59,7 @@ public class Stage {
         return false;
     }
     
-    void placeTetramino(Tetramino tetramino) {
+    public void placeTetramino(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
             for (int dy = 0; dy < 4; dy++) {
