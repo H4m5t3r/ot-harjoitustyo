@@ -20,3 +20,7 @@
 ||1| Updated the documentation. |
 |16.4|5| I decided to redesign the structure of the game to correct the Checkstyle errors and hopfully fix some bugs at the same time. |
 |17.4|6| I started rebuilding the game in a new folder called "TetrisRethought". |
+|18.4|4| I got some tips on how I could improve the game logic and stopped working on TetrisRethought. The project is now located in the folder called "TetrisBetter" |
+|19.4|6| I spent the day processing the idea of the new structure and worked on implementing JavaFX |
+|20.4|7| I completed more methods in the game logic, created the Music class and worked on tests. |
+||||

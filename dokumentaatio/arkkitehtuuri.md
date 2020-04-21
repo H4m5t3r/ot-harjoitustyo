@@ -1,3 +1,5 @@
+### Package diagram
 ![package diagram](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Package%20diagram.png)
 
+### Sequence diagram for createRandomTetramino()
 ![Sequence diagram for createRandomTetramino()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/createRandomTetramino.png)
