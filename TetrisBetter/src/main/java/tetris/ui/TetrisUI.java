@@ -101,7 +101,7 @@ public class TetrisUI extends Application {
         rect.setY(50);
         rect.setFill(Color.HOTPINK);
         gamePane.getChildren().add(rect);
-        gamePane.getChildren().add(backToMenu);
+//        gamePane.getChildren().add(backToMenu);
         gamePane.getChildren().add(line);
         gameScene = new Scene(gamePane, 500, 500);
         
