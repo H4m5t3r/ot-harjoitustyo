@@ -1,3 +1,5 @@
+package tests;
+
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.robot.Robot;
