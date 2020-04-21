@@ -1,6 +1,6 @@
 # Work time log
 
-**Total time spent: 34,5**
+**Total amount of hours spent: 58,5**
 | day | time | what I did  |
 | :----:|:-----| :-----|
 | 19.3 | 1    | I read through the instructions and checked how the project directory should be structured |
@@ -23,4 +23,4 @@
 |18.4|4| I got some tips on how I could improve the game logic and stopped working on TetrisRethought. The project is now located in the folder called "TetrisBetter" |
 |19.4|6| I spent the day processing the idea of the new structure and worked on implementing JavaFX |
 |20.4|7| I completed more methods in the game logic, created the Music class and worked on tests. |
-||||
+|21.4|5| I created more tests to cover more of the game's logic, updated the documentation and everything else that needed to be done before this week's deadline. |
