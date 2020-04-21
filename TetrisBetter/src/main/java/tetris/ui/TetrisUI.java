@@ -108,20 +108,7 @@ public class TetrisUI extends Application {
         
         gameScene.setOnKeyPressed(
                 event -> {
-                    switch (event.getCode()) {
-                        case DOWN:
-                            controller.handle(event);
-                            break;
-                        case UP:
-                            controller.handle(event);
-                            break;
-                        case LEFT:
-                            controller.handle(event);
-                            break;
-                        case RIGHT:
-                            controller.handle(event);
-                            break;
-                    }
+                    controller.handle(event);
                 });
         
         

@@ -41,5 +41,9 @@ public class Music {
             playing = false;
         }
     }
+    
+    public boolean isPlaying() {
+        return this.playing;
+    }
 }
 

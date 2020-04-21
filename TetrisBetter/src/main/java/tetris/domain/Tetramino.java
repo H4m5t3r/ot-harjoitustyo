@@ -26,10 +26,16 @@ public class Tetramino {
     public int getX() {
         return x;
     }
-
     public int getY() {
         return y;
     }
+    
+//    public void increaseX(int s) {
+//        this.x += s;
+//    }
+//    public void inxreaseY(int t) {
+//        this.y += t;
+//    }
     
     public int getRotation() {
         return this.rotation;

@@ -7,6 +7,7 @@ package tetris.main;
 
 import tetris.domain.Logic;
 import tetris.domain.Music;
+import tetris.domain.Stage;
 import tetris.ui.TetrisUI;
 
 /**

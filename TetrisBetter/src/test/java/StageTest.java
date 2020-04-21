@@ -1,44 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-import org.junit.After;
-import org.junit.AfterClass;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import tetris.domain.Stage;
+import tetris.domain.Tetramino;
+import static tetris.domain.Tetramino.Shape.I;
 
-/**
- *
- * @author taleiko
- */
+
 public class StageTest {
-    
-    public StageTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+    private Stage stage;
+    private Tetramino collides;
+    private Tetramino doesNotCollide;
+
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        stage = new Stage();
+        collides = new Tetramino(0, 13, I);
+        doesNotCollide = new Tetramino(0, 12, I);
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void collidesWithWorks() {
+        assertTrue(stage.collidesWith(collides) == true);
+        assertTrue(stage.collidesWith(doesNotCollide) == false);
+    }
 }
