@@ -34,7 +34,7 @@ public class TetrisUI extends Application {
     private Label title;
     private Label music;
     private Button newGame;
-    private Button eightBit;
+    private Button clarinet;
     private Button piano;
     private Button trumpet;
     private Button stopPlaying;
@@ -44,6 +44,10 @@ public class TetrisUI extends Application {
     private Pane gamePane;
     private Button backToMenu;
     private Line line;
+    private Rectangle a;
+    private Rectangle b;
+    private Rectangle c;
+    private Rectangle d;
     
     //Game logic
     Logic logic;
@@ -64,7 +68,7 @@ public class TetrisUI extends Application {
         menuElements = new GridPane();
         title = new Label("TETRIS");
         music = new Label("Music");
-        eightBit = new Button("8-bit");
+        clarinet = new Button("Clarinet");
         piano = new Button("Piano");
         trumpet = new Button("Trumpet");
         stopPlaying = new Button("Stop playing");
@@ -79,7 +83,7 @@ public class TetrisUI extends Application {
         menuElements.add(newGame, 2, 3);
         menuElements.add(title, 2, 1);
         musicButtons.getChildren().add(music);
-        musicButtons.getChildren().add(eightBit);
+        musicButtons.getChildren().add(clarinet);
         musicButtons.getChildren().add(piano);
         musicButtons.getChildren().add(trumpet);
         musicButtons.getChildren().add(stopPlaying);
@@ -120,6 +124,10 @@ public class TetrisUI extends Application {
         
         backToMenu.setOnAction((event) -> {
             window.setScene(menuScene);
+        });
+        
+        clarinet.setOnAction((event) -> {
+            musicPlayer.playMusic("TetrisClarinet.wav");
         });
         
         piano.setOnAction((event) -> {

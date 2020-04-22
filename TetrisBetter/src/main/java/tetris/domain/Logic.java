@@ -42,6 +42,7 @@ public class Logic implements Runnable {
             if (stage.collidesWith(current)) {
                 current.y++;
                 stage.placeTetramino(current);
+                stage.removeRowsCheck();
                 current = null;
             }
             dropCounter += dropCounterIncrement;

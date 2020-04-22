@@ -69,6 +69,27 @@ public class Stage {
             }
         }
     }
+    
+    public void removeRowsCheck() {
+        for (int i = 23; i > 0; i--) {
+            if (blockGrid[i][0] == '#') {
+                for (int j = 1; j < blockGrid[i].length; j++) {
+                    if (blockGrid[i][j] != '#') {
+                        break;
+                    }
+                    removeRow(i);
+                }
+            }
+        }
+    }
+    
+    private void removeRow(int heightLimit) {
+        for (int i = heightLimit; i > 0; i--) {
+            for (int j = 0; j < blockGrid[heightLimit].length; j++) {
+                blockGrid[i][j] = blockGrid[i - 1][j];
+            }
+        }
+    }
 
 //    private static class Block {
 //        //x och y onödiga?
@@ -86,5 +107,5 @@ public class Stage {
 //            return this.y;
 //        }
 //    }
-    
+
 }
