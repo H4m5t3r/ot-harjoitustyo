@@ -5,8 +5,10 @@
  */
 package tetris.main;
 
+import java.util.Timer;
+import java.util.TimerTask;
+import javafx.application.Application;
 import tetris.domain.Logic;
-import tetris.domain.Music;
 import tetris.domain.Stage;
 import tetris.ui.TetrisUI;
 
@@ -18,7 +20,8 @@ public class Main {
     
     public static void main(String[] args) {
         System.out.println("Hello");
-        TetrisUI.main(args);
+        Application.launch(TetrisUI.class);
+        
 //        Logic logic = new Logic();
         //controllern ska tydligen vara kopplad till UIn? new Controller(logic);
 //        logic.run(); //borde "run" med 100ms eller kortare paus emellan

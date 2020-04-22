@@ -22,19 +22,19 @@ public class Controller {
     public void handle(KeyEvent event) {
         switch (event.getCode()) {
             case RIGHT:
-//                logic.moveRight();
+                logic.moveRight();
                 System.out.println("Right");
                 break;
             case DOWN:
-//                logic.moveDown();
+                logic.moveDown();
                 System.out.println("DownPrint");
                 break;
             case LEFT:
-//                logic.moveLeft();
+                logic.moveLeft();
                 System.out.println("Left");
                 break;
             case UP:
-//                logic.rotate();
+                logic.rotate();
                 System.out.println("Up");
                 break;
             default:

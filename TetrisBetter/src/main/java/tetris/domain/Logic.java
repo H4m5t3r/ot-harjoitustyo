@@ -26,9 +26,12 @@ public class Logic implements Runnable {
     private int dropCounterIncrement = 5; //we drop the block every "tick"
     private Tetramino current;
     private Stage stage;
+    private Timer timer;
+    private TimerTask timerTask;
     
     public Logic() {
-        this.stage = new Stage();
+        stage = new Stage();
+        
     }
 
     
@@ -37,18 +40,22 @@ public class Logic implements Runnable {
         if (current == null) {
             current = createRandomTetramino();
         }
+        System.out.println(this.current.getX() + ", " + this.current.getY());
         if (dropCounter == 0) {
-            current.y--;
+            current.y++;
             if (stage.collidesWith(current)) {
-                current.y++;
+//                System.out.println("Collide");
+                current.y--;
                 stage.placeTetramino(current);
                 stage.removeRowsCheck();
                 current = null;
             }
+            stage.printPlayArea();
             dropCounter += dropCounterIncrement;
         } else {
             dropCounter--;
         }
+        
     }
     
     
@@ -67,17 +74,17 @@ public class Logic implements Runnable {
     }
     
     public void moveDown() {
-        current.y--;
+        current.y++;
         if (stage.collidesWith(current)) {
-            current.y++;
+            current.y--;
         } else {
-            dropCounter += dropCounterIncrement;
+            dropCounter = dropCounterIncrement;
         }
     }
 
     private Tetramino createRandomTetramino() {
         Shape randomShape = createRandomEnum();
-        return new Tetramino(0, 9, randomShape);
+        return new Tetramino(9, 1, randomShape);
     }
 
     private Shape createRandomEnum() {

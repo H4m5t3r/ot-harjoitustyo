@@ -5,6 +5,8 @@
  */
 package tetris.ui;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -54,6 +56,9 @@ public class TetrisUI extends Application {
     Controller controller;
     Music musicPlayer;
 
+    private Timer timer;
+    private TimerTask task;
+    
     @Override
     public void init() {
         //Dependencies
@@ -61,6 +66,15 @@ public class TetrisUI extends Application {
         controller = new Controller(logic);
         musicPlayer = new Music();
         
+        
+        //Timer
+        timer = new Timer();
+        task = new TimerTask() {
+            @Override
+            public void run() {
+                logic.run();
+            }
+        };
         
         //JavaFX
         menuPane = new BorderPane();
@@ -75,6 +89,8 @@ public class TetrisUI extends Application {
         musicButtons = new VBox();
         backToMenu = new Button("Back to menu");
         line = new Line(600, 0, 600, 300);
+        
+        
     }
     
     @Override
@@ -120,6 +136,7 @@ public class TetrisUI extends Application {
         //Set button actions
         newGame.setOnAction((event) -> {
             window.setScene(gameScene);
+            timer.schedule(task, 0, 100);
         });
         
         backToMenu.setOnAction((event) -> {
@@ -151,7 +168,7 @@ public class TetrisUI extends Application {
         System.out.println("Game closing");
     }
     
-    public static void main(String[] args) {
-        launch(TetrisUI.class);
+    public Logic getLogic() {
+        return this.logic;
     }
 }

@@ -19,40 +19,41 @@ public class Stage {
         //width: 4-15, height: 0-23
         
         this.blockGrid = new char[28][20];
-        for (int i = 0; i < 24; i++) {
+        for (int y = 0; y < 24; y++) {
             //Left "wall"
-            for (int j = 0; j < 4; j++) {
-                blockGrid[i][j] = '#';
+            for (int x = 0; x < 4; x++) {
+                blockGrid[y][x] = '#';
             }
             //Right "wall"
-            for (int j = 16; j < 20; j++) {
-                blockGrid[i][j] = '#';
+            for (int x = 16; x < 20; x++) {
+                blockGrid[y][x] = '#';
             }
         }
         //"Floor"
-        for (int i = 24; i < 28; i++) {
-            for (int j = 0; j < 20; j++) {
-                blockGrid[i][j] = '#';
+        for (int y = 24; y < 28; y++) {
+            for (int x = 0; x < 20; x++) {
+                blockGrid[y][x] = '#';
             }
         }
         //The play area
-        for (int i = 0; i < blockGrid.length - 4; i++) {
-            for (int j = 4; j < 16; j++) {
-                blockGrid[i][j] = ' ';
+        for (int y = 0; y < blockGrid.length - 4; y++) {
+            for (int x = 4; x < 16; x++) {
+                blockGrid[y][x] = ' ';
             }
         }
     }
     
     public char getBlock(int x, int y) {
-        return blockGrid[x][y];
+        return blockGrid[y][x];
     }
 
     public boolean collidesWith(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
             for (int dy = 0; dy < 4; dy++) {
-                if (chars[dx][dy] != ' ' && blockGrid[tetramino.x + dx][tetramino.y + dy] != ' ') {
-                    return true;
+                if (chars[dy][dx] != ' ' && blockGrid[tetramino.y + dy][tetramino.x + dx] != ' ') {
+//                    System.out.println("Collide " + dx + ", " + dy);
+                return true;
                 }
             }
         }
@@ -63,31 +64,42 @@ public class Stage {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
             for (int dy = 0; dy < 4; dy++) {
-                if (chars[dx][dy] != ' ') {
-                    blockGrid[tetramino.x + dx][tetramino.y + dy] = '#';
+                if (chars[dy][dx] != ' ') {
+                    blockGrid[tetramino.y + dy][tetramino.x + dx] = '#';
                 }
             }
         }
     }
     
     public void removeRowsCheck() {
-        for (int i = 23; i > 0; i--) {
-            if (blockGrid[i][0] == '#') {
-                for (int j = 1; j < blockGrid[i].length; j++) {
-                    if (blockGrid[i][j] != '#') {
-                        break;
-                    }
-                    removeRow(i);
-                }
+        return;
+//        for (int y = 23; y > 0; y--) {
+//            if (blockGrid[y][0] == '#') {
+//                for (int x = 1; x < blockGrid[y].length; x++) {
+//                    if (blockGrid[y][x] != '#') {
+//                        break;
+//                    }
+//                    
+//                    removeRow(y);
+//                }
+//            }
+//        }
+    }
+    
+    private void removeRow(int heightLimit) {
+        for (int y = heightLimit; y > 0; y--) {
+            for (int x = 0; x < blockGrid[heightLimit].length; x++) {
+                blockGrid[y][x] = blockGrid[y - 1][x];
             }
         }
     }
     
-    private void removeRow(int heightLimit) {
-        for (int i = heightLimit; i > 0; i--) {
-            for (int j = 0; j < blockGrid[heightLimit].length; j++) {
-                blockGrid[i][j] = blockGrid[i - 1][j];
+    public void printPlayArea() {
+        for (int y = 0; y < blockGrid.length; y++) {
+            for (int x = 0; x < blockGrid[0].length; x++) {
+                System.out.print(blockGrid[y][x]);
             }
+            System.out.println("");
         }
     }
 

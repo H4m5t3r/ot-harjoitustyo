@@ -130,7 +130,7 @@ public class Tetramino {
                         {' ', ' ', ' ', ' '},
                     };
                 default:
-                    return null;
+                    throw new UnsupportedOperationException("Input shape incorrect");
             }
         }
     }
