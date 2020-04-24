@@ -74,6 +74,10 @@ public class TetrisUI extends Application {
             public void run() {
                 logic.run();
                 gamePane = logic.getPaneFromStage();
+                gameScene.setOnKeyPressed(
+                event -> {
+                    controller.handle(event);
+                });
             }
         };
         
