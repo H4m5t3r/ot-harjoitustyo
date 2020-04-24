@@ -41,6 +41,7 @@
                 <configuration>
                     <excludes>
                         <exclude>tetris/ui/**/*</exclude>
+                        <exclude>tetris/domain/Controller</exclude>
                     </excludes>
                 </configuration>
                 <executions>

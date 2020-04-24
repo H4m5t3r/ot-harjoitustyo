@@ -111,18 +111,19 @@ public class TetrisUI extends Application {
         
         
         
-        //The game screen
+        //FIRST TEST GAME SCREEN
+//        gamePane = new Pane();
+//        Text text = new Text("fdss");
+//        text.setX(0);
+//        
+//        Rectangle rect = new Rectangle(24, 24);
+//        rect.setX(75);
+//        rect.setY(50);
+//        rect.setFill(Color.HOTPINK);
+//        gamePane.getChildren().add(rect);
+////        gamePane.getChildren().add(backToMenu);
+//        gamePane.getChildren().add(line);
         gamePane = new Pane();
-        Text text = new Text("fdss");
-        text.setX(0);
-        
-        Rectangle rect = new Rectangle(24, 24);
-        rect.setX(75);
-        rect.setY(50);
-        rect.setFill(Color.HOTPINK);
-        gamePane.getChildren().add(rect);
-//        gamePane.getChildren().add(backToMenu);
-        gamePane.getChildren().add(line);
         gameScene = new Scene(gamePane, 500, 500);
         
         gameScene.setOnKeyPressed(
@@ -136,6 +137,8 @@ public class TetrisUI extends Application {
         //Set button actions
         newGame.setOnAction((event) -> {
             timer.schedule(task, 0, 100);
+            gamePane = logic.getPaneFromStage();
+            gameScene = new Scene(gamePane);
             window.setScene(gameScene);
         });
         

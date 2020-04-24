@@ -6,4 +6,5 @@
 
 <suppressions>
     <suppress files="tetris.ui.TetrisUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="tetris.domain.Controller.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>
