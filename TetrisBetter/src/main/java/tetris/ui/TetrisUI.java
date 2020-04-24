@@ -73,6 +73,7 @@ public class TetrisUI extends Application {
             @Override
             public void run() {
                 logic.run();
+                gamePane = logic.getPaneFromStage();
             }
         };
         

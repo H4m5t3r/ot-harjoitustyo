@@ -119,14 +119,15 @@ public class Stage {
                 }
             }
         }
-        for (int i = 0; i < current.getCollisionCheck().length; i++) {
-            for (int j = 0; j < current.getCollisionCheck()[0].length; j++) {
-                Rectangle recttwo = new Rectangle(24, 24);
-                recttwo.setX((j + current.x));
-                recttwo.setY(i + current.y);
-                newPane.getChildren().add(recttwo);
-            }
-        }
+        //Something wrong with the block check
+//        for (int i = 0; i < current.getCollisionCheck().length; i++) {
+//            for (int j = 0; j < current.getCollisionCheck()[0].length; j++) {
+//                Rectangle recttwo = new Rectangle(24, 24);
+//                recttwo.setX((j + current.x));
+//                recttwo.setY(i + current.y);
+//                newPane.getChildren().add(recttwo);
+//            }
+//        }
         return newPane;
     }
 
