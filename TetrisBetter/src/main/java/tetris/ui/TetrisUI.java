@@ -135,8 +135,8 @@ public class TetrisUI extends Application {
         
         //Set button actions
         newGame.setOnAction((event) -> {
-            window.setScene(gameScene);
             timer.schedule(task, 0, 100);
+            window.setScene(gameScene);
         });
         
         backToMenu.setOnAction((event) -> {

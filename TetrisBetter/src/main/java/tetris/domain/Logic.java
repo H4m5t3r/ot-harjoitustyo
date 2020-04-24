@@ -5,8 +5,7 @@
  */
 package tetris.domain;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import javafx.scene.layout.Pane;
 import tetris.domain.Tetramino.Shape;
 import static tetris.domain.Tetramino.Shape.I;
 import static tetris.domain.Tetramino.Shape.J;
@@ -26,12 +25,11 @@ public class Logic implements Runnable {
     private int dropCounterIncrement = 5; //we drop the block every "tick"
     private Tetramino current;
     private Stage stage;
-    private Timer timer;
-    private TimerTask timerTask;
+    private Pane pane;
     
     public Logic() {
         stage = new Stage();
-        
+        pane = new Pane();
     }
 
     
@@ -40,6 +38,7 @@ public class Logic implements Runnable {
         if (current == null) {
             current = createRandomTetramino();
         }
+        
         System.out.println(this.current.getX() + ", " + this.current.getY());
         if (dropCounter == 0) {
             current.y++;
@@ -110,6 +109,10 @@ public class Logic implements Runnable {
         while (stage.collidesWith(current)) {
             current.rotate();
         }
+    }
+    
+    public Pane getPaneFromStage() {
+        return stage.getPane(current);
     }
     
 }

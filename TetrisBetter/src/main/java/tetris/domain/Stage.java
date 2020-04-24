@@ -5,6 +5,9 @@
  */
 package tetris.domain;
 
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
+
 /**
  *
  * @author taleiko
@@ -71,6 +74,7 @@ public class Stage {
         }
     }
     
+    //Game logic stops working correctly if this method is used?
     public void removeRowsCheck() {
         return;
 //        for (int y = 23; y > 0; y--) {
@@ -102,9 +106,31 @@ public class Stage {
             System.out.println("");
         }
     }
+    
+    public Pane getPane(Tetramino current) {
+        Pane newPane = new Pane();
+        for (int i = 0; i < blockGrid.length; i++) {
+            for (int j = 0; j < blockGrid[0].length; j++) {
+                if (blockGrid[i][j] == '#') {
+                    Rectangle rect = new Rectangle(24, 24);
+                    rect.setX(j * 25);
+                    rect.setY(i * 25);
+                    newPane.getChildren().add(rect);
+                }
+            }
+        }
+        for (int i = 0; i < current.getCollisionCheck().length; i++) {
+            for (int j = 0; j < current.getCollisionCheck()[0].length; j++) {
+                Rectangle recttwo = new Rectangle(24, 24);
+                recttwo.setX((j + current.x));
+                recttwo.setY(i + current.y);
+                newPane.getChildren().add(recttwo);
+            }
+        }
+        return newPane;
+    }
 
 //    private static class Block {
-//        //x och y onödiga?
 //        private int x;
 //        private int y;
 //
