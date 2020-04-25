@@ -73,6 +73,7 @@ public class TetrisUI extends Application {
             @Override
             public void run() {
                 logic.run();
+//                updateGameScreen();
                 gamePane = logic.getPaneFromStage();
                 gameScene.setOnKeyPressed(
                 event -> {
@@ -129,6 +130,7 @@ public class TetrisUI extends Application {
 ////        gamePane.getChildren().add(backToMenu);
 //        gamePane.getChildren().add(line);
         gamePane = new Pane();
+        gamePane.getChildren().add(new Rectangle(25, 25, 24, 24));
         gameScene = new Scene(gamePane, 500, 500);
         
         gameScene.setOnKeyPressed(
@@ -142,8 +144,7 @@ public class TetrisUI extends Application {
         //Set button actions
         newGame.setOnAction((event) -> {
             timer.schedule(task, 0, 100);
-            gamePane = logic.getPaneFromStage();
-            gameScene = new Scene(gamePane);
+//            gamePane = logic.getPaneFromStage();
             window.setScene(gameScene);
         });
         
@@ -178,5 +179,22 @@ public class TetrisUI extends Application {
     
     public Logic getLogic() {
         return this.logic;
+    }
+    
+    private void updateGameScreen() {
+        gamePane.getChildren().clear();
+        char[][] grid = logic.getGridFromStage();
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '#') {
+                    Rectangle rect = new Rectangle(j * 25, i * 25, 24, 24);
+                    rect.setId("" + i + ";" + j);
+                    if (!gamePane.getChildren().contains(rect)) {
+                        System.out.println("Yes");
+                        gamePane.getChildren().add(rect);
+                    }
+                }
+            }
+        }
     }
 }

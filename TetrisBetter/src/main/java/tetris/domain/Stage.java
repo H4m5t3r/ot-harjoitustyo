@@ -130,6 +130,10 @@ public class Stage {
 //        }
         return newPane;
     }
+    
+    public char[][] getBlockGrid() {
+        return this.blockGrid;
+    }
 
 //    private static class Block {
 //        private int x;

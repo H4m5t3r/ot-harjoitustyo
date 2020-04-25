@@ -25,11 +25,9 @@ public class Logic implements Runnable {
     private int dropCounterIncrement = 5; //we drop the block every "tick"
     private Tetramino current;
     private Stage stage;
-    private Pane pane;
     
     public Logic() {
         stage = new Stage();
-        pane = new Pane();
     }
 
     
@@ -115,4 +113,7 @@ public class Logic implements Runnable {
         return stage.getPane(current);
     }
     
+    public char[][] getGridFromStage() {
+        return this.stage.getBlockGrid();
+    }
 }
