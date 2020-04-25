@@ -73,8 +73,8 @@ public class TetrisUI extends Application {
             @Override
             public void run() {
                 logic.run();
-//                updateGameScreen();
-                gamePane = logic.getPaneFromStage();
+                updateGameScreen();
+//                gamePane = logic.getPaneFromStage();
                 gameScene.setOnKeyPressed(
                 event -> {
                     controller.handle(event);

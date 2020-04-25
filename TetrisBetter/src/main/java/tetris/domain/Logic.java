@@ -47,7 +47,7 @@ public class Logic implements Runnable {
                 stage.removeRowsCheck();
                 current = null;
             }
-            stage.printPlayArea();
+//            stage.printPlayArea();
             dropCounter += dropCounterIncrement;
         } else {
             dropCounter--;
