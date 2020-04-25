@@ -76,18 +76,14 @@ public class Stage {
     
     //Game logic stops working correctly if this method is used?
     public void removeRowsCheck() {
-        return;
-//        for (int y = 23; y > 0; y--) {
-//            if (blockGrid[y][0] == '#') {
-//                for (int x = 1; x < blockGrid[y].length; x++) {
-//                    if (blockGrid[y][x] != '#') {
-//                        break;
-//                    }
-//                    
-//                    removeRow(y);
-//                }
-//            }
-//        }
+        outer: for (int y = 0; y < 24; y++) {
+            for (int x = 4; x < blockGrid[y].length - 4; x++) {
+                if (blockGrid[y][x] != '#') {
+                    continue outer;
+                }
+            }
+            removeRow(y);
+        }
     }
     
     private void removeRow(int heightLimit) {

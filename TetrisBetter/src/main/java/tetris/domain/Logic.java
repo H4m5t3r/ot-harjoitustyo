@@ -36,8 +36,7 @@ public class Logic implements Runnable {
         if (current == null) {
             current = createRandomTetramino();
         }
-        
-        System.out.println(this.current.getX() + ", " + this.current.getY());
+//        System.out.println(this.current.getX() + ", " + this.current.getY());
         if (dropCounter == 0) {
             current.y++;
             if (stage.collidesWith(current)) {
@@ -114,6 +113,24 @@ public class Logic implements Runnable {
     }
     
     public char[][] getGridFromStage() {
-        return this.stage.getBlockGrid();
+        if (current == null) {
+            return this.stage.getBlockGrid();
+        }
+            char[][] tempGrid = new char[28][20];
+            char[][] stageGrid = this.stage.getBlockGrid();
+            for (int i = 0; i < stageGrid.length; i++) {
+                for (int j = 0; j < stageGrid[0].length; j++) {
+                    tempGrid[i][j] = stageGrid[i][j];
+                }
+            }
+            char[][] tetr = current.getCollisionCheck();
+            for (int i = 0; i < tetr.length; i++) {
+                for (int j = 0; j < tetr[0].length; j++) {
+                    if (tetr[i][j] == '#') {
+                        tempGrid[current.y + i][current.x + j] = tetr[i][j];
+                    }
+                }
+            }
+        return tempGrid;
     }
 }
