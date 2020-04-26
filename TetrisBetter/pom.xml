@@ -98,7 +98,7 @@
                 <configuration>
                     <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
                 </configuration>
-            </plugin>  
+            </plugin>
         </plugins>   
     </build>
     <properties>

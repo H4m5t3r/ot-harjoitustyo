@@ -27,4 +27,4 @@
 |22.4|4| I implemented a Java Timer to make the game logic run in a cycle. The game logic works now. |
 |24.4|5| I worked on the UI. I spent the day trying to make the methods that update the game pane work without any success. |
 |25.4|4| I finally managed to make the game screen update itself. |
-|26.4|||
+|26.4|3||

@@ -35,7 +35,6 @@ public class Logic implements Runnable {
         if (dropCounter == 0) {
             current.y++;
             if (stage.collidesWith(current)) {
-//                System.out.println("Collide");
                 current.y--;
                 stage.placeTetramino(current);
                 stage.removeRowsCheck();
@@ -51,12 +50,9 @@ public class Logic implements Runnable {
     
     //Methods used for moving the current tetramino.
     
-    
 /**
  * Moves the current tetramino one step to the left if it does not collide
  * with any blocks in the grid.
-
- *
  * @see    stage.collidesWith(current)
  *
  */
@@ -69,11 +65,9 @@ public class Logic implements Runnable {
 /**
  * Moves the current tetramino one step to the right if it does not collide 
  * with any blocks in the grid.
- *
  * @see    stage.collidesWith(current)
- *
  */
-    void moveRight() {
+    public void moveRight() {
         current.x++;
         if (stage.collidesWith(current)) {
             current.x--;
@@ -82,9 +76,7 @@ public class Logic implements Runnable {
 /**
  * Moves the current tetramino one step down if it does not collide with any 
  * blocks in the grid.
- *
  * @see    stage.collidesWith(current)
- *
  */
     public void moveDown() {
         current.y++;
@@ -97,9 +89,7 @@ public class Logic implements Runnable {
 
 /**
  * Creates a new tetramino and gives it its starting coordinates.
- *
  * @see    createRandomEnum()
- *
  */
     //
     private Tetramino createRandomTetramino() {
@@ -159,5 +149,9 @@ public class Logic implements Runnable {
             }
         }
         return tempGrid;
+    }
+    
+    public Tetramino getCurrent() {
+        return this.current;
     }
 }

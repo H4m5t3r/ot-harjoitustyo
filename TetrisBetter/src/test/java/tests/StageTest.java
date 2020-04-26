@@ -17,13 +17,10 @@ public class StageTest {
     @Before
     public void setUp() {
         stage = new Stage();
-        collides = new Tetramino(0, 13, I);
-        doesNotCollide = new Tetramino(0, 12, I);
+        collides = new Tetramino(13, 0, I);
+        doesNotCollide = new Tetramino(12, 0, I);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
     @Test
     public void collidesWithWorks() {
         assertTrue(stage.collidesWith(collides) == true);
@@ -32,15 +29,15 @@ public class StageTest {
     
     @Test
     public void placeTetraminoWorks() {
-        //Use the getGrid method instead now that getBlock() has been removed
-//        assertTrue(stage.getBlock(1, 12) == ' ');
-//        assertTrue(stage.getBlock(1, 13) == ' ');
-//        assertTrue(stage.getBlock(1, 14) == ' ');
-//        assertTrue(stage.getBlock(1, 15) == ' ');
-//        stage.placeTetramino(doesNotCollide);
-//        assertTrue(stage.getBlock(1, 12) == '#');
-//        assertTrue(stage.getBlock(1, 13) == '#');
-//        assertTrue(stage.getBlock(1, 14) == '#');
-//        assertTrue(stage.getBlock(1, 15) == '#');
+        char[][] grid = stage.getBlockGrid();
+        assertTrue(grid[1][12] == ' ');
+        assertTrue(grid[1][13] == ' ');
+        assertTrue(grid[1][14] == ' ');
+        assertTrue(grid[1][15] == ' ');
+        stage.placeTetramino(doesNotCollide);
+        assertTrue(grid[1][12] == '#');
+        assertTrue(grid[1][13] == '#');
+        assertTrue(grid[1][14] == '#');
+        assertTrue(grid[1][15] == '#');
     }
 }

@@ -47,3 +47,8 @@ Create a jar file
 ```
 mvn package
 ```
+
+Generate a JavaDoc
+```
+mvn javadoc:javadoc
+```
