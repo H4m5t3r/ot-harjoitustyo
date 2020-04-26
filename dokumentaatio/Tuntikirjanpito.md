@@ -24,3 +24,7 @@
 |19.4|6| I spent the day processing the idea of the new structure and worked on implementing JavaFX |
 |20.4|7| I completed more methods in the game logic, created the Music class and worked on tests. |
 |21.4|5| I created more tests to cover more of the game's logic, updated the documentation and everything else that needed to be done before this week's deadline. |
+|22.4|4| I implemented a Java Timer to make the game logic run in a cycle. The game logic works now. |
+|24.4|5| I worked on the UI. I spent the day trying to make the methods that update the game pane work without any success. |
+|25.4|4| I finally managed to make the game screen update itself. |
+|26.4|||

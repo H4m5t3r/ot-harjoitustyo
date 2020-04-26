@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tetris.domain;
-    
+
 import java.io.File;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-
+/**
+ * A class used for playing music. It does not use any of the classes created 
+ * in this project and can therefore be used outside of it.
+ */
 public class Music {
     private boolean playing;
     private Clip clip;

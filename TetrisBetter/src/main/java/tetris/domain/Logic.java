@@ -10,7 +10,10 @@ import static tetris.domain.Tetramino.Shape.S;
 import static tetris.domain.Tetramino.Shape.T;
 import static tetris.domain.Tetramino.Shape.Z;
 
-
+/**
+ * Contains the run() method that is used in TetrisUI to run the game and 
+ * other methods that are important for the game to work correctly.
+ */
 public class Logic implements Runnable {
     
     private int dropCounter;
@@ -48,6 +51,13 @@ public class Logic implements Runnable {
     
     //Methods used for moving the current tetramino.
     
+    
+/**
+ * Moves the current tetramino one step to the left
+ *
+ * @see    logic.moveRight()
+ *
+ */
     public void moveLeft() {
         current.x--;
         if (stage.collidesWith(current)) {
@@ -107,21 +117,19 @@ public class Logic implements Runnable {
         if (current == null) {
             return this.stage.getBlockGrid();
         }
-            char[][] tempGrid = new char[28][20];
-            char[][] stageGrid = this.stage.getBlockGrid();
-            for (int i = 0; i < stageGrid.length; i++) {
-                for (int j = 0; j < stageGrid[0].length; j++) {
-                    tempGrid[i][j] = stageGrid[i][j];
+        char[][] tempGrid = new char[28][20];
+        char[][] stageGrid = this.stage.getBlockGrid();
+        for (int i = 0; i < stageGrid.length; i++) {
+            System.arraycopy(stageGrid[i], 0, tempGrid[i], 0, stageGrid[0].length);
+        }
+        char[][] tetr = current.getCollisionCheck();
+        for (int i = 0; i < tetr.length; i++) {
+            for (int j = 0; j < tetr[0].length; j++) {
+                if (tetr[i][j] == '#') {
+                    tempGrid[current.y + i][current.x + j] = tetr[i][j];
                 }
             }
-            char[][] tetr = current.getCollisionCheck();
-            for (int i = 0; i < tetr.length; i++) {
-                for (int j = 0; j < tetr[0].length; j++) {
-                    if (tetr[i][j] == '#') {
-                        tempGrid[current.y + i][current.x + j] = tetr[i][j];
-                    }
-                }
-            }
+        }
         return tempGrid;
     }
 }

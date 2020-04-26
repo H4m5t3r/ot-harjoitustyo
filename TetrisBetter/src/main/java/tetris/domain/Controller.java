@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tetris.domain;
 
 import javafx.scene.input.KeyEvent;
@@ -10,6 +6,11 @@ import javafx.scene.input.KeyEvent;
 /**
  *
  * @author taleiko
+ */
+
+/**
+ * This class takes input from the TetrisUI class and calls methods located in 
+ * the logic class.
  */
 public class Controller {
 

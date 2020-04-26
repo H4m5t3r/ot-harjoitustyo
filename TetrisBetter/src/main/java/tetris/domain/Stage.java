@@ -1,9 +1,10 @@
 
 package tetris.domain;
 
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
-
+/**
+ * Contains a block grid that is used to check if a tetramino collides
+ * with the level and placing rectangles in the GUI.
+ */
 public class Stage {
     
     private char[][] blockGrid;

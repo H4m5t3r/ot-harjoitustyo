@@ -162,7 +162,6 @@ public class TetrisUI extends Application {
             for (int j = 4; j < grid[0].length - 4; j++) {
                 if (grid[i][j] == '#') {
                     Rectangle rect = new Rectangle((j - 4) * 25, i * 25, 24, 24);
-                    rect.setId("" + i + ";" + j);
                     gamePane.getChildren().add(rect);
                 }
             }
