@@ -23,7 +23,8 @@ import tetris.domain.Logic;
 import tetris.domain.Music;
 
 /**
- *
+ * The Java application containing the GUI.
+ * 
  * @author taleiko
  */
 public class TetrisUI extends Application {

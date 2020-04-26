@@ -53,9 +53,11 @@ public class Logic implements Runnable {
     
     
 /**
- * Moves the current tetramino one step to the left
+ * Moves the current tetramino one step to the left if it does not collide
+ * with any blocks in the grid.
+
  *
- * @see    logic.moveRight()
+ * @see    stage.collidesWith(current)
  *
  */
     public void moveLeft() {
@@ -64,14 +66,26 @@ public class Logic implements Runnable {
             current.x++;
         }
     }
-    
+/**
+ * Moves the current tetramino one step to the right if it does not collide 
+ * with any blocks in the grid.
+ *
+ * @see    stage.collidesWith(current)
+ *
+ */
     void moveRight() {
         current.x++;
         if (stage.collidesWith(current)) {
             current.x--;
         }
     }
-    
+/**
+ * Moves the current tetramino one step down if it does not collide with any 
+ * blocks in the grid.
+ *
+ * @see    stage.collidesWith(current)
+ *
+ */
     public void moveDown() {
         current.y++;
         if (stage.collidesWith(current)) {
@@ -81,12 +95,21 @@ public class Logic implements Runnable {
         }
     }
 
-    //Creates a new tetramino and gives it its starting coordinates
+/**
+ * Creates a new tetramino and gives it its starting coordinates.
+ *
+ * @see    createRandomEnum()
+ *
+ */
+    //
     private Tetramino createRandomTetramino() {
         Shape randomShape = createRandomEnum();
         return new Tetramino(9, 0, randomShape);
     }
 
+/**
+ * Creates a random Enum.
+ */
     private Shape createRandomEnum() {
         int tetraminoShape = (int) (Math.random() * 100);
         if (tetraminoShape < 15) {
@@ -104,7 +127,10 @@ public class Logic implements Runnable {
         }
         return I;
     }
-    
+/**
+ * Changes the tetramino's rotation status if the rotated version does not 
+ * collide with any blocks in the grid.
+ */
     void rotate() {
         current.rotate();
         while (stage.collidesWith(current)) {
@@ -112,7 +138,9 @@ public class Logic implements Runnable {
         }
     }
     
-    
+/**
+ * Used to pass the current state of the grid and the tetramino to TetrisUI.
+ */
     public char[][] getGridFromStage() {
         if (current == null) {
             return this.stage.getBlockGrid();
