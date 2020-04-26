@@ -1,26 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tetris.domain;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
-/**
- *
- * @author taleiko
- */
 public class Stage {
     
     private char[][] blockGrid;
     
     public Stage() {
-        //Creates a 12*24 grid with walls outside that are 4 wide
+        //Creates a 12*24 grid with walls outside the game area that are 4 wide
         //The actual play area:
         //width: 4-15, height: 0-23
-        
         this.blockGrid = new char[28][20];
         for (int y = 0; y < 24; y++) {
             //Left "wall"
@@ -46,23 +37,21 @@ public class Stage {
         }
     }
     
-    public char getBlock(int x, int y) {
-        return blockGrid[y][x];
-    }
-
+    //Checks if a tetramino collides with blocks in the grid when it is in a
+    //specific spot
     public boolean collidesWith(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
             for (int dy = 0; dy < 4; dy++) {
                 if (chars[dy][dx] != ' ' && blockGrid[tetramino.y + dy][tetramino.x + dx] != ' ') {
-//                    System.out.println("Collide " + dx + ", " + dy);
-                return true;
+                    return true;
                 }
             }
         }
         return false;
     }
     
+    //Merges a tetramino with the grid
     public void placeTetramino(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
@@ -74,7 +63,7 @@ public class Stage {
         }
     }
     
-    //Game logic stops working correctly if this method is used?
+    //Checks if there are rows that should be removed
     public void removeRowsCheck() {
         outer: for (int y = 0; y < 24; y++) {
             for (int x = 4; x < blockGrid[y].length - 4; x++) {
@@ -85,7 +74,7 @@ public class Stage {
             removeRow(y);
         }
     }
-    
+    //Removes a row and lowers the blocks above that row by one
     private void removeRow(int heightLimit) {
         for (int y = heightLimit; y > 0; y--) {
             for (int x = 0; x < blockGrid[heightLimit].length; x++) {
@@ -94,6 +83,8 @@ public class Stage {
         }
     }
     
+    //REMOVE IN THE FINAL VERSION
+    //A method that was used for debugging, prints the grid
     public void printPlayArea() {
         for (int y = 0; y < blockGrid.length; y++) {
             for (int x = 0; x < blockGrid[0].length; x++) {
@@ -103,48 +94,7 @@ public class Stage {
         }
     }
     
-    public Pane getPane(Tetramino current) {
-        Pane newPane = new Pane();
-        for (int i = 0; i < blockGrid.length; i++) {
-            for (int j = 0; j < blockGrid[0].length; j++) {
-                if (blockGrid[i][j] == '#') {
-                    Rectangle rect = new Rectangle(24, 24);
-                    rect.setX(j * 25);
-                    rect.setY(i * 25);
-                    newPane.getChildren().add(rect);
-                }
-            }
-        }
-        //Something wrong with the block check
-//        for (int i = 0; i < current.getCollisionCheck().length; i++) {
-//            for (int j = 0; j < current.getCollisionCheck()[0].length; j++) {
-//                Rectangle recttwo = new Rectangle(24, 24);
-//                recttwo.setX((j + current.x));
-//                recttwo.setY(i + current.y);
-//                newPane.getChildren().add(recttwo);
-//            }
-//        }
-        return newPane;
-    }
-    
     public char[][] getBlockGrid() {
         return this.blockGrid;
     }
-
-//    private static class Block {
-//        private int x;
-//        private int y;
-//
-//        public Block() {
-//            
-//        }
-//        
-//        public int getX() {
-//            return this.x;
-//        }
-//        public int getY() {
-//            return this.y;
-//        }
-//    }
-
 }

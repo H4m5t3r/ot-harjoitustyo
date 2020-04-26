@@ -16,10 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tetris.domain.Controller;
 import tetris.domain.Logic;
@@ -46,11 +43,6 @@ public class TetrisUI extends Application {
     private Scene gameScene;
     private Pane gamePane;
     private Button backToMenu;
-    private Line line;
-    private Rectangle a;
-    private Rectangle b;
-    private Rectangle c;
-    private Rectangle d;
     
     //Game logic
     Logic logic;
@@ -78,20 +70,18 @@ public class TetrisUI extends Application {
                     public void run() {
                         logic.run();
                         updateGameScreen(gamePane);
-        //                gamePane = logic.getPaneFromStage();
                         gameScene.setOnKeyPressed(
                         event -> {
                             controller.handle(event);
                         });
                     }
                 });
-                
             }
         };
         
         //JavaFX
         menuPane = new BorderPane();
-        newGame = new Button("Start a new game");
+        newGame = new Button("New game");
         menuElements = new GridPane();
         title = new Label("TETRIS");
         music = new Label("Music");
@@ -101,9 +91,7 @@ public class TetrisUI extends Application {
         stopPlaying = new Button("Stop playing");
         musicButtons = new VBox();
         backToMenu = new Button("Back to menu");
-        line = new Line(600, 0, 600, 300);
-        
-        
+//        line = new Line(600, 0, 600, 300);
     }
     
     @Override
@@ -121,22 +109,6 @@ public class TetrisUI extends Application {
         
         menuPane.setCenter(menuElements);
         
-        
-        
-        
-        //FIRST TEST GAME SCREEN
-//        gamePane = new Pane();
-//        Text text = new Text("fdss");
-//        text.setX(0);
-//        
-//        Rectangle rect = new Rectangle(24, 24);
-//        rect.setX(75);
-//        rect.setY(50);
-//        rect.setFill(Color.HOTPINK);
-//        gamePane.getChildren().add(rect);
-////        gamePane.getChildren().add(backToMenu);
-//        gamePane.getChildren().add(line);
-        
         gamePane.getChildren().add(new Rectangle(25, 25, 24, 24));
         gameScene = new Scene(gamePane, 25 * 12, 25 * 24);
         
@@ -145,13 +117,11 @@ public class TetrisUI extends Application {
                     controller.handle(event);
                 });
         
-        
         menuScene = new Scene(menuPane, 25 * 12, 25 * 24);
         
         //Set button actions
         newGame.setOnAction((event) -> {
             timer.schedule(task, 0, 100);
-//            gamePane = logic.getPaneFromStage();
             window.setScene(gameScene);
         });
         
@@ -184,10 +154,7 @@ public class TetrisUI extends Application {
         System.out.println("Game closing");
     }
     
-    public Logic getLogic() {
-        return this.logic;
-    }
-    
+    //Updates the game pane so that the user can see what is happening
     private void updateGameScreen(Pane gamePane) {
         gamePane.getChildren().clear();
         char[][] grid = logic.getGridFromStage();
@@ -196,9 +163,7 @@ public class TetrisUI extends Application {
                 if (grid[i][j] == '#') {
                     Rectangle rect = new Rectangle((j - 4) * 25, i * 25, 24, 24);
                     rect.setId("" + i + ";" + j);
-//                    if (!gamePane.getChildren().contains(rect)) {
-                        gamePane.getChildren().add(rect);
-//                    }
+                    gamePane.getChildren().add(rect);
                 }
             }
         }

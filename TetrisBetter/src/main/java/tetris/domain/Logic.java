@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tetris.domain;
 
-import javafx.scene.layout.Pane;
 import tetris.domain.Tetramino.Shape;
 import static tetris.domain.Tetramino.Shape.I;
 import static tetris.domain.Tetramino.Shape.J;
@@ -15,10 +10,7 @@ import static tetris.domain.Tetramino.Shape.S;
 import static tetris.domain.Tetramino.Shape.T;
 import static tetris.domain.Tetramino.Shape.Z;
 
-/**
- *
- * @author taleiko
- */
+
 public class Logic implements Runnable {
     
     private int dropCounter;
@@ -30,7 +22,7 @@ public class Logic implements Runnable {
         stage = new Stage();
     }
 
-    
+    //REMOVE LINES USED FOR DEBUGGING IN THE FINAL VERSION
     @Override
     public void run() {
         if (current == null) {
@@ -54,6 +46,7 @@ public class Logic implements Runnable {
         
     }
     
+    //Methods used for moving the current tetramino.
     
     public void moveLeft() {
         current.x--;
@@ -78,9 +71,10 @@ public class Logic implements Runnable {
         }
     }
 
+    //Creates a new tetramino and gives it its starting coordinates
     private Tetramino createRandomTetramino() {
         Shape randomShape = createRandomEnum();
-        return new Tetramino(9, 1, randomShape);
+        return new Tetramino(9, 0, randomShape);
     }
 
     private Shape createRandomEnum() {
@@ -108,9 +102,6 @@ public class Logic implements Runnable {
         }
     }
     
-    public Pane getPaneFromStage() {
-        return stage.getPane(current);
-    }
     
     public char[][] getGridFromStage() {
         if (current == null) {

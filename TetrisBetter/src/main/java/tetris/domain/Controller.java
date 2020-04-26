@@ -23,19 +23,15 @@ public class Controller {
         switch (event.getCode()) {
             case RIGHT:
                 logic.moveRight();
-                System.out.println("Right");
                 break;
             case DOWN:
                 logic.moveDown();
-                System.out.println("DownPrint");
                 break;
             case LEFT:
                 logic.moveLeft();
-                System.out.println("Left");
                 break;
             case UP:
                 logic.rotate();
-                System.out.println("Up");
                 break;
             default:
                 break;
