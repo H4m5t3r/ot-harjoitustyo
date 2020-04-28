@@ -15,6 +15,8 @@ This repository contains a Tetris project for the course "Ohjelmistotekniikka" (
 ## Releases
 [Week 5](https://github.com/H4m5t3r/ot-harjoitustyo/releases/tag/viikko5)
 
+[Week 6](https://github.com/H4m5t3r/ot-harjoitustyo/releases/tag/viikko6)
+
 ## Progress
 **21.4**
 * I redid the game logic to make it better and the program is now located in the folder called "TetrisBetter". I also worked on the Music class and it works as it should now.

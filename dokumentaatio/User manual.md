@@ -1,5 +1,5 @@
 # User manual
-Start with downloading the latest version []() and the audio files that are used for playing music. Make sure the audio files are placed in the same directory as the jar file.
+Start with downloading the [latest version](https://github.com/H4m5t3r/ot-harjoitustyo/releases/tag/viikko6) and the audio files that are used for playing music. Make sure the audio files are placed in the same directory as the jar file.
 
 ## Starting the program
 Once you have downloaded the program you can run it with the following command:
