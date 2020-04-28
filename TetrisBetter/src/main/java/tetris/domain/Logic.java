@@ -119,7 +119,7 @@ public class Logic implements Runnable {
         return I;
     }
 /**
- * Changes the tetramino's rotation status if the rotated version does not 
+ * Changes the tetramino's rotation status until the rotated version does not 
  * collide with any blocks in the grid.
  */
     void rotate() {
@@ -136,11 +136,13 @@ public class Logic implements Runnable {
         if (current == null) {
             return this.stage.getBlockGrid();
         }
+        //The stage's grid
         char[][] tempGrid = new char[28][20];
         char[][] stageGrid = this.stage.getBlockGrid();
         for (int i = 0; i < stageGrid.length; i++) {
             System.arraycopy(stageGrid[i], 0, tempGrid[i], 0, stageGrid[0].length);
         }
+        //Adding the current tetramino to the grid since it is not merged yet
         char[][] tetr = current.getCollisionCheck();
         for (int i = 0; i < tetr.length; i++) {
             for (int j = 0; j < tetr[0].length; j++) {
