@@ -1,6 +1,6 @@
 # Work time log
 
-**Total amount of hours spent: 58,5**
+**Total amount of hours spent: 90**
 | day | time | what I did  |
 | :----:|:-----| :-----|
 | 19.3 | 1    | I read through the instructions and checked how the project directory should be structured |
@@ -9,7 +9,7 @@
 |28.3|2| I created a Maven project in NetBeans and added it to the repository. I also made sure everything was working, added everything needed for tests, etc in the pom-file and tested the project on VMWare to check that the project could be run on the university's systems. |
 ||2| I worked on the game part of the project. |
 |29.3|2| I completed a working (but buggy) version of Tetris |
-||2,5| I did some debugging, created a test and started updating the project's documentation |
+||3| I did some debugging, created a test and started updating the project's documentation |
 |30.3|1| I finished this week's documentation |
 |4.4|3| I created a menu for the game. This took more time than it should have because I tried to get JavaFX Scene Builder to work with NetBeans but there were no instructions on how to do this in the course material and I could not get it to work on my own so in the end I had to make the menu from basic JavaFX code. |
 ||4| I worked on making the program play music and started integrating the menu with the game. |
@@ -27,4 +27,5 @@
 |22.4|4| I implemented a Java Timer to make the game logic run in a cycle. The game logic works now. |
 |24.4|5| I worked on the UI. I spent the day trying to make the methods that update the game pane work without any success. |
 |25.4|4| I finally managed to make the game screen update itself. |
-|26.4|3||
+|26.4|5| Added JavaDoc descriptions and more tests. |
+|28.4|4| Added a user manual and updated the architecture description as well as the rest of the documentation. |
