@@ -152,7 +152,7 @@ public class TetrisUI extends Application {
     
     @Override
     public void stop() {
-        System.out.println("Game closing");
+        System.exit(0);
     }
     
     //Updates the game pane so that the user can see what is happening

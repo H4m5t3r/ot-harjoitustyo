@@ -10,7 +10,6 @@ import tetris.ui.TetrisUI;
 public class Main {
     
     public static void main(String[] args) {
-        System.out.println("Hello");
         Application.launch(TetrisUI.class);
     }
 }

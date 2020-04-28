@@ -5,12 +5,12 @@ The program consists of two packages (three if you count the package where the m
 #### Package diagram
 ![package diagram](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Package%20diagram.png)
 
-The UI creates 3 classes: Controller, Music and Logic.
+The UI creates 3 classes: Controller, MusicPlayer and Logic.
 
 ## Controller
 The controller class takes input from the user during the game and calls methods from the logic class.
 
-## Music
+## MusicPlayer
 The music class is used by the UI to start playing audio files located in the project folder. The class contains two methods: playMusic() and stopPlaying(). playMusic() takes the name of the file as input, which is passed from the UI.
 
 ## Logic
