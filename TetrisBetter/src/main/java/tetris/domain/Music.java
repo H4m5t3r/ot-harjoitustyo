@@ -19,7 +19,6 @@ public class Music {
     }
     
     public void playMusic(String filepath) {
-        System.out.println(playing);
         if (playing) {
             clip.stop();
         }
@@ -30,7 +29,7 @@ public class Music {
             clip.start();
             playing = true;
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("MusicFileError");
         }
     }
     
