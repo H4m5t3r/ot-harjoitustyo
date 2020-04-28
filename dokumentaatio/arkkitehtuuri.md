@@ -32,6 +32,9 @@ The Logic class' methods:
 
 The Logic class' most important part is the run() method. This is the method that the TimerTask in the UI calls and makes the game progress. When it is run it first checks if it should create a new tetramino. If the dropCounter (used for determining whether it is time for the tetramino to fall down) is 0 the method checks if the tetramino can be moved down using stage.collidesWith(current). If not it stage.placeTetramino() is called (merges the tetramino with the grid) and stage.removeRowsCheck() checks if any rows are full.
 
+#### Sequence diagram for createRandomTetramino()
+![Sequence diagram for createRandomTetramino()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/createRandomTetramino.png)
+
 
 ### Tetramino
 A Tetramino is a class used to describe the falling polygons. It contains a Shape (an Enum) that describes what shape it has, an integer called rotation and its x and y coordinate. There are 7 different shapes. The class has 3 public methods:
@@ -47,7 +50,3 @@ The Shape class has one method: getDefaultCollisionCheck(). It returns a 4 * 4 c
 
 ### Stage
 The stage contains a two dimensional 20 * 28 character grid called blockGrid where "#" means that there is an object blocking the way (either a wall or a tetramino that has been merged with the grid) and " " means that a space is not occupied. The actual play area is the 12 * 24 area located in the upper center part of the grid. When the class is initialized it creates walls around the play area that prevent the falling tetraminos from moving outside of it. This is done by using the boolean method collidesWith(). Whenever a tetramino is moved the stage checks if the way is blocked by using the tetramino's cooridinates. It gets a 4 * 4 character grid from the Shape class using getCollisionCheck(), which contains a correctly rotated tetramino. collidesWith() then checks if any of the tetramino's blocks collide with the stage.
-
-
-### Sequence diagram for createRandomTetramino()
-![Sequence diagram for createRandomTetramino()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/createRandomTetramino.png)
