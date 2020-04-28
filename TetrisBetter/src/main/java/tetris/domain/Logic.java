@@ -98,7 +98,8 @@ public class Logic implements Runnable {
     }
 
 /**
- * Creates a random Enum.
+ * Creates a random Enum which will determine what kind of shape a tetramino 
+ * will have.
  */
     private Shape createRandomEnum() {
         int tetraminoShape = (int) (Math.random() * 100);
