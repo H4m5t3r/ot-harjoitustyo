@@ -30,6 +30,9 @@ public class Logic implements Runnable {
     public void run() {
         if (current == null) {
             current = createRandomTetramino();
+            if (stage.collidesWith(current)) {
+                stage.setGameEnd();
+            }
         }
 //        System.out.println(this.current.getX() + ", " + this.current.getY());
         if (dropCounter == 0) {

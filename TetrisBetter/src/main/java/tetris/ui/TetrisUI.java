@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -45,6 +46,7 @@ public class TetrisUI extends Application {
     private Button green;
     private Button red;
     private String backgroundFile;
+    private Button quit;
     
     private Scene gameScene;
     private Pane gamePane;
@@ -129,6 +131,9 @@ public class TetrisUI extends Application {
         scoreText2 = new Text(320, 340, "" + logic.getScoreFromStage());
         scoreText2.setStyle("-fx-font: 32 arial;");
         line = new Line(300, 0, 300, 600);
+        quit = new Button("Quit");
+        quit.setLayoutX(120);
+        quit.setLayoutY(350);
     }
     
     @Override
@@ -201,6 +206,10 @@ public class TetrisUI extends Application {
             updateMenuScreen(menuPane);
         });
         
+        quit.setOnAction((event) -> {
+            System.exit(500);
+        });
+        
         window.setScene(menuScene);
         window.show();
     }
@@ -220,22 +229,29 @@ public class TetrisUI extends Application {
     
     //Updates the game pane so that the user can see what is happening
     private void updateGameScreen(Pane gamePane) {
-        gamePane.getChildren().clear();
-        
-        background = new Image(backgroundFile);
-        iv.setImage(background);
-        gamePane.getChildren().add(iv);
         char[][] grid = logic.getGridFromStage();
-        for (int i = 0; i < grid.length - 4; i++) {
-            for (int j = 4; j < grid[0].length - 4; j++) {
-                if (grid[i][j] == '#') {
-                    Rectangle rect = new Rectangle((j - 4) * 25, i * 25, 24, 24);
-                    gamePane.getChildren().add(rect);
+        if (grid[27][0] == 'e') {
+            Text gameOver = new Text(120, 250, "GAME OVER");
+            gameOver.setStyle("-fx-font: 60 arial;");
+            gameOver.setFill(Color.RED);
+            gamePane.getChildren().add(gameOver);
+        } else {
+            gamePane.getChildren().clear();
+            background = new Image(backgroundFile);
+            iv.setImage(background);
+            gamePane.getChildren().add(iv);
+
+            for (int i = 0; i < grid.length - 4; i++) {
+                for (int j = 4; j < grid[0].length - 4; j++) {
+                    if (grid[i][j] == '#') {
+                        Rectangle rect = new Rectangle((j - 4) * 25, i * 25, 24, 24);
+                        gamePane.getChildren().add(rect);
+                    }
                 }
             }
+            scoreText2 = new Text(320, 340, "" + logic.getScoreFromStage());
+            scoreText2.setStyle("-fx-font: 32 arial;");
+            gamePane.getChildren().addAll(scoreText1, scoreText2, line);
         }
-        scoreText2 = new Text(320, 340, "" + logic.getScoreFromStage());
-        scoreText2.setStyle("-fx-font: 32 arial;");
-        gamePane.getChildren().addAll(scoreText1, scoreText2, line);
     }
 }

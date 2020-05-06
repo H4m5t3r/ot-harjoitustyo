@@ -109,4 +109,8 @@ public class Stage {
     public long getScore() {
         return this.score;
     }
+    
+    public void setGameEnd() {
+        blockGrid[27][0] = 'e';
+    }
 }
