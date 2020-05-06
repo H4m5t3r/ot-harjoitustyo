@@ -14,29 +14,33 @@ import javafx.scene.input.KeyEvent;
  */
 public class Controller {
 
-    private Logic logic;
+    private final Logic logic;
     
     public Controller(Logic logic) {
         this.logic = logic;
     }
 
     public void handle(KeyEvent event) {
-        switch (event.getCode()) {
-            case RIGHT:
-                logic.moveRight();
-                break;
-            case DOWN:
-                logic.moveDown();
-                logic.increaseStageScoreOnDown();
-                break;
-            case LEFT:
-                logic.moveLeft();
-                break;
-            case UP:
-                logic.rotate();
-                break;
-            default:
-                break;
+        try {
+            switch (event.getCode()) {
+                case RIGHT:
+                    logic.moveRight();
+                    break;
+                case DOWN:
+                    logic.moveDown();
+                    logic.increaseStageScoreOnDown();
+                    break;
+                case LEFT:
+                    logic.moveLeft();
+                    break;
+                case UP:
+                    logic.rotate();
+                    break;
+                default:
+                    break;
+            }
+        } catch (Exception e) {
+            
         }
     }
 }

@@ -17,9 +17,9 @@ import static tetris.domain.Tetramino.Shape.Z;
 public class Logic implements Runnable {
     
     private int dropCounter;
-    private int dropCounterIncrement = 5; //we drop the block every "tick"
+    private final int dropCounterIncrement = 5; //we drop the tetramino every "tick"
     private Tetramino current;
-    private Stage stage;
+    private final Stage stage;
     
     public Logic() {
         stage = new Stage();

@@ -29,3 +29,4 @@
 |25.4|4| I finally managed to make the game screen update itself. |
 |26.4|5| Added JavaDoc descriptions and more tests. |
 |28.4|4| Added a user manual and updated the architecture description as well as the rest of the documentation. |
+|6.5|4| Added a live score counter to the game and updated the look of the menu. |

@@ -7,7 +7,7 @@ package tetris.domain;
  */
 public class Stage {
     
-    private char[][] blockGrid;
+    private final char[][] blockGrid;
     private long score;
     
     public Stage() {
