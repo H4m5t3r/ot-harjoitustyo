@@ -157,4 +157,12 @@ public class Logic implements Runnable {
     public Tetramino getCurrent() {
         return this.current;
     }
+    
+    public long getScoreFromStage() {
+        return this.stage.getScore();
+    }
+    
+    public void increaseStageScoreOnDown() {
+        this.stage.increaseScore();
+    }
 }

@@ -18,7 +18,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tetris.domain.Controller;
 import tetris.domain.Logic;
@@ -36,6 +40,7 @@ public class TetrisUI extends Application {
     private GridPane menuElements;
     private Label title;
     private Label music;
+    private Label backgroundLabel;
     private Button newGame;
     private Button clarinet;
     private Button piano;
@@ -50,10 +55,13 @@ public class TetrisUI extends Application {
     
     private Scene gameScene;
     private Pane gamePane;
+    private Text scoreText1;
+    private Text scoreText2;
     private Button backToMenu;
     
     private ImageView iv;
     private Image background;
+    private Line line;
     
     //Game logic
     Logic logic;
@@ -96,6 +104,7 @@ public class TetrisUI extends Application {
         menuElements = new GridPane();
         title = new Label("TETRIS");
         music = new Label("Music");
+        backgroundLabel = new Label("Background");
         clarinet = new Button("Clarinet");
         piano = new Button("Piano");
         trumpet = new Button("Trumpet");
@@ -109,6 +118,11 @@ public class TetrisUI extends Application {
         white = new Button("White");
         iv = new ImageView();
         backgroundFile = "file:WhiteBackground.png";
+        scoreText1 = new Text(320, 300, "Score:");
+        scoreText1.setStyle("-fx-font: 32 arial;");
+        scoreText2 = new Text(320, 340, "" + logic.getScoreFromStage());
+        scoreText2.setStyle("-fx-font: 32 arial;");
+        line = new Line(300, 0, 300, 600);
     }
     
     @Override
@@ -121,6 +135,7 @@ public class TetrisUI extends Application {
         musicButtons.getChildren().add(piano);
         musicButtons.getChildren().add(trumpet);
         musicButtons.getChildren().add(stopPlaying);
+        musicButtons.getChildren().add(backgroundLabel);
         musicButtons.getChildren().add(white);
         musicButtons.getChildren().add(blue);
         musicButtons.getChildren().add(green);
@@ -130,14 +145,14 @@ public class TetrisUI extends Application {
         
         menuPane.setCenter(menuElements);
         
-        gameScene = new Scene(gamePane, 25 * 12, 25 * 24);
+        gameScene = new Scene(gamePane, 25 * 12 * 2, 25 * 24);
         
         gameScene.setOnKeyPressed(
                 event -> {
                     controller.handle(event);
                 });
         
-        menuScene = new Scene(menuPane, 25 * 12, 25 * 24);
+        menuScene = new Scene(menuPane, 25 * 12 * 2, 25 * 24);
         
         //Set button actions
         newGame.setOnAction((event) -> {
@@ -222,5 +237,8 @@ public class TetrisUI extends Application {
                 }
             }
         }
+        scoreText2 = new Text(320, 340, "" + logic.getScoreFromStage());
+        scoreText2.setStyle("-fx-font: 32 arial;");
+        gamePane.getChildren().addAll(scoreText1, scoreText2, line);
     }
 }

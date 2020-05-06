@@ -8,6 +8,7 @@ package tetris.domain;
 public class Stage {
     
     private char[][] blockGrid;
+    private long score;
     
     public Stage() {
         //Creates a 12*24 grid with walls outside the game area that are 4 wide
@@ -36,6 +37,7 @@ public class Stage {
                 blockGrid[y][x] = ' ';
             }
         }
+        score = 0;
     }
     
     //Checks if a tetramino collides with blocks in the grid when it is in a
@@ -82,6 +84,7 @@ public class Stage {
                 blockGrid[y][x] = blockGrid[y - 1][x];
             }
         }
+        score += 100;
     }
     
     //REMOVE IN THE FINAL VERSION
@@ -97,5 +100,13 @@ public class Stage {
     
     public char[][] getBlockGrid() {
         return this.blockGrid;
+    }
+    
+    public void increaseScore() {
+        score += 1;
+    }
+    
+    public long getScore() {
+        return this.score;
     }
 }

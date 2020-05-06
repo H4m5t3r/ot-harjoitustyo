@@ -27,6 +27,7 @@ public class Controller {
                 break;
             case DOWN:
                 logic.moveDown();
+                logic.increaseStageScoreOnDown();
                 break;
             case LEFT:
                 logic.moveLeft();
