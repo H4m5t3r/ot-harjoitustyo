@@ -12,6 +12,8 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -40,10 +42,18 @@ public class TetrisUI extends Application {
     private Button trumpet;
     private Button stopPlaying;
     private VBox musicButtons;
+    private Button white;
+    private Button blue;
+    private Button green;
+    private Button red;
+    private String backgroundFile;
     
     private Scene gameScene;
     private Pane gamePane;
     private Button backToMenu;
+    
+    private ImageView iv;
+    private Image background;
     
     //Game logic
     Logic logic;
@@ -93,6 +103,12 @@ public class TetrisUI extends Application {
         musicButtons = new VBox();
         backToMenu = new Button("Back to menu");
 //        line = new Line(600, 0, 600, 300);
+        blue = new Button("Blue");
+        green = new Button("Green");
+        red = new Button("Red");
+        white = new Button("White");
+        iv = new ImageView();
+        backgroundFile = "file:WhiteBackground.png";
     }
     
     @Override
@@ -105,12 +121,15 @@ public class TetrisUI extends Application {
         musicButtons.getChildren().add(piano);
         musicButtons.getChildren().add(trumpet);
         musicButtons.getChildren().add(stopPlaying);
+        musicButtons.getChildren().add(white);
+        musicButtons.getChildren().add(blue);
+        musicButtons.getChildren().add(green);
+        musicButtons.getChildren().add(red);
         
         menuElements.add(musicButtons, 2, 2);
         
         menuPane.setCenter(menuElements);
         
-        gamePane.getChildren().add(new Rectangle(25, 25, 24, 24));
         gameScene = new Scene(gamePane, 25 * 12, 25 * 24);
         
         gameScene.setOnKeyPressed(
@@ -146,6 +165,30 @@ public class TetrisUI extends Application {
             musicPlayer.stopPlaying();
         });
         
+        white.setOnAction((event) -> {
+            backgroundFile = "file:WhiteBackground.png";
+            iv.setImage(background);
+            updateMenuScreen(menuPane);
+        });
+        
+        blue.setOnAction((event) -> {
+            backgroundFile = "file:BlueBackground.png";
+            iv.setImage(background);
+            updateMenuScreen(menuPane);
+        });
+        
+        green.setOnAction((event) -> {
+            backgroundFile = "file:GreenBackground.png";
+            iv.setImage(background);
+            updateMenuScreen(menuPane);
+        });
+        
+        red.setOnAction((event) -> {
+            backgroundFile = "file:RedBackground.png";
+            iv.setImage(background);
+            updateMenuScreen(menuPane);
+        });
+        
         window.setScene(menuScene);
         window.show();
     }
@@ -155,9 +198,21 @@ public class TetrisUI extends Application {
         System.exit(0);
     }
     
+    private void updateMenuScreen(Pane menuPane) {
+        menuPane.getChildren().clear();
+        
+        background = new Image(backgroundFile);
+        iv.setImage(background);
+        menuPane.getChildren().addAll(iv, menuElements);
+    }
+    
     //Updates the game pane so that the user can see what is happening
     private void updateGameScreen(Pane gamePane) {
         gamePane.getChildren().clear();
+        
+        background = new Image(backgroundFile);
+        iv.setImage(background);
+        gamePane.getChildren().add(iv);
         char[][] grid = logic.getGridFromStage();
         for (int i = 0; i < grid.length - 4; i++) {
             for (int j = 4; j < grid[0].length - 4; j++) {
