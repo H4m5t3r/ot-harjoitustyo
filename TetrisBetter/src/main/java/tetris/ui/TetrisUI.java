@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris.ui;
 
 import java.util.Timer;
@@ -20,8 +15,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tetris.domain.Controller;
@@ -36,7 +29,7 @@ import tetris.domain.Music;
 public class TetrisUI extends Application {
     //JavaFX
     private Scene menuScene;
-    private BorderPane menuPane;
+    private Pane menuPane;
     private GridPane menuElements;
     private Label title;
     private Label music;
@@ -47,6 +40,7 @@ public class TetrisUI extends Application {
     private Button trumpet;
     private Button stopPlaying;
     private VBox musicButtons;
+    private VBox backgroundButtons;
     private Button white;
     private Button blue;
     private Button green;
@@ -57,7 +51,6 @@ public class TetrisUI extends Application {
     private Pane gamePane;
     private Text scoreText1;
     private Text scoreText2;
-    private Button backToMenu;
     
     private ImageView iv;
     private Image background;
@@ -99,23 +92,37 @@ public class TetrisUI extends Application {
         };
         
         //JavaFX
-        menuPane = new BorderPane();
+        menuPane = new Pane();
         newGame = new Button("New game");
+        newGame.setPrefWidth(115);
         menuElements = new GridPane();
         title = new Label("TETRIS");
-        music = new Label("Music");
-        backgroundLabel = new Label("Background");
+        title.setStyle("-fx-font: 32 arial;");
+        music = new Label("        Music");
+        
         clarinet = new Button("Clarinet");
         piano = new Button("Piano");
         trumpet = new Button("Trumpet");
         stopPlaying = new Button("Stop playing");
         musicButtons = new VBox();
-        backToMenu = new Button("Back to menu");
-//        line = new Line(600, 0, 600, 300);
+        
+        clarinet.setPrefWidth(100);
+        piano.setPrefWidth(100);
+        trumpet.setPrefWidth(100);
+        stopPlaying.setPrefWidth(100);
+        
+        backgroundLabel = new Label("Background");
+        white = new Button("White");
         blue = new Button("Blue");
         green = new Button("Green");
         red = new Button("Red");
-        white = new Button("White");
+        
+        white.setPrefWidth(80);
+        blue.setPrefWidth(80);
+        green.setPrefWidth(80);
+        red.setPrefWidth(80);
+        backgroundButtons = new VBox();
+        
         iv = new ImageView();
         backgroundFile = "file:WhiteBackground.png";
         scoreText1 = new Text(320, 300, "Score:");
@@ -130,27 +137,22 @@ public class TetrisUI extends Application {
         //The menu
         menuElements.add(newGame, 2, 3);
         menuElements.add(title, 2, 1);
-        musicButtons.getChildren().add(music);
-        musicButtons.getChildren().add(clarinet);
-        musicButtons.getChildren().add(piano);
-        musicButtons.getChildren().add(trumpet);
-        musicButtons.getChildren().add(stopPlaying);
-        musicButtons.getChildren().add(backgroundLabel);
-        musicButtons.getChildren().add(white);
-        musicButtons.getChildren().add(blue);
-        musicButtons.getChildren().add(green);
-        musicButtons.getChildren().add(red);
+        musicButtons.getChildren().addAll(music, clarinet, piano, trumpet, stopPlaying);
         
-        menuElements.add(musicButtons, 2, 2);
+        backgroundButtons.getChildren().addAll(backgroundLabel, white, blue, green, red);
         
-        menuPane.setCenter(menuElements);
+        menuElements.add(musicButtons, 1, 2);
+        menuElements.add(backgroundButtons, 3, 2);
+        
+        menuElements.setLayoutX(145);
+        menuElements.setLayoutY(150);
+        menuPane.getChildren().add(menuElements);
         
         gameScene = new Scene(gamePane, 25 * 12 * 2, 25 * 24);
         
-        gameScene.setOnKeyPressed(
-                event -> {
-                    controller.handle(event);
-                });
+        gameScene.setOnKeyPressed((event) -> {
+            controller.handle(event);
+        });
         
         menuScene = new Scene(menuPane, 25 * 12 * 2, 25 * 24);
         
@@ -158,10 +160,6 @@ public class TetrisUI extends Application {
         newGame.setOnAction((event) -> {
             timer.schedule(task, 0, 100);
             window.setScene(gameScene);
-        });
-        
-        backToMenu.setOnAction((event) -> {
-            window.setScene(menuScene);
         });
         
         clarinet.setOnAction((event) -> {
@@ -213,9 +211,9 @@ public class TetrisUI extends Application {
         System.exit(0);
     }
     
+    //Updated the menu screen when the background buttons are pressed
     private void updateMenuScreen(Pane menuPane) {
         menuPane.getChildren().clear();
-        
         background = new Image(backgroundFile);
         iv.setImage(background);
         menuPane.getChildren().addAll(iv, menuElements);
