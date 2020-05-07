@@ -10,10 +10,13 @@ public class Stage {
     private final char[][] blockGrid;
     private long score;
     
+    /**
+     *  Creates a 12*24 grid with walls outside the game area that are 4 wide
+     *  The actual play area:
+     *  width: 4-15, height: 0-23
+     */
     public Stage() {
-        //Creates a 12*24 grid with walls outside the game area that are 4 wide
-        //The actual play area:
-        //width: 4-15, height: 0-23
+        
         this.blockGrid = new char[28][20];
         for (int y = 0; y < 24; y++) {
             //Left "wall"
@@ -40,8 +43,13 @@ public class Stage {
         score = 0;
     }
     
-    //Checks if a tetramino collides with blocks in the grid when it is in a
-    //specific spot
+    /**
+     * Checks if a tetramino collides with blocks in the grid when it is in a
+     * specific spot.
+     * @param tetramino
+     * @return 
+     */
+    //
     public boolean collidesWith(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
@@ -54,7 +62,10 @@ public class Stage {
         return false;
     }
     
-    //Merges a tetramino with the grid
+    /**
+     * Merges a tetramino with the grid.
+     * @param tetramino 
+     */
     public void placeTetramino(Tetramino tetramino) {
         char[][] chars = tetramino.getCollisionCheck();
         for (int dx = 0; dx < 4; dx++) {
@@ -66,7 +77,9 @@ public class Stage {
         }
     }
     
-    //Checks if there are rows that should be removed
+    /**
+     * Checks if there are rows that are full and should be removed.
+     */
     public void removeRowsCheck() {
         outer: for (int y = 0; y < 24; y++) {
             for (int x = 4; x < blockGrid[y].length - 4; x++) {
@@ -77,7 +90,10 @@ public class Stage {
             removeRow(y);
         }
     }
-    //Removes a row and lowers the blocks above that row by one
+
+    /**
+     * Removes a row and lowers the blocks above that row by one.
+     */
     private void removeRow(int heightLimit) {
         for (int y = heightLimit; y > 0; y--) {
             for (int x = 0; x < blockGrid[heightLimit].length; x++) {
@@ -85,17 +101,6 @@ public class Stage {
             }
         }
         score += 100;
-    }
-    
-    //REMOVE IN THE FINAL VERSION
-    //A method that was used for debugging, prints the grid
-    public void printPlayArea() {
-        for (int y = 0; y < blockGrid.length; y++) {
-            for (int x = 0; x < blockGrid[0].length; x++) {
-                System.out.print(blockGrid[y][x]);
-            }
-            System.out.println("");
-        }
     }
     
     public char[][] getBlockGrid() {
@@ -110,6 +115,10 @@ public class Stage {
         return this.score;
     }
     
+    /**
+     * Puts the character "e" in the grid so that the updateGameScreen() method
+     * in TetrisUI notices it and displays the text "GAME OVER".
+     */
     public void setGameEnd() {
         blockGrid[27][0] = 'e';
     }

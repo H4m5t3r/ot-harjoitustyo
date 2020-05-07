@@ -25,7 +25,6 @@ public class Logic implements Runnable {
         stage = new Stage();
     }
 
-    //REMOVE LINES USED FOR DEBUGGING IN THE FINAL VERSION
     @Override
     public void run() {
         if (current == null) {
@@ -34,7 +33,6 @@ public class Logic implements Runnable {
                 stage.setGameEnd();
             }
         }
-//        System.out.println(this.current.getX() + ", " + this.current.getY());
         if (dropCounter == 0) {
             current.y++;
             if (stage.collidesWith(current)) {
@@ -43,44 +41,38 @@ public class Logic implements Runnable {
                 stage.removeRowsCheck();
                 current = null;
             }
-//            stage.printPlayArea();
             dropCounter += dropCounterIncrement;
         } else {
             dropCounter--;
         }
-        
     }
     
     //Methods used for moving the current tetramino.
     
-/**
- * Moves the current tetramino one step to the left if it does not collide
- * with any blocks in the grid.
- * @see    stage.collidesWith(current)
- *
- */
+    /**
+     * Moves the current tetramino one step to the left if it does not collide
+     * with any blocks in the grid.
+     */
     public void moveLeft() {
         current.x--;
         if (stage.collidesWith(current)) {
             current.x++;
         }
     }
-/**
- * Moves the current tetramino one step to the right if it does not collide 
- * with any blocks in the grid.
- * @see    stage.collidesWith(current)
- */
+    /**
+     * Moves the current tetramino one step to the right if it does not collide 
+     * with any blocks in the grid.
+     */
     public void moveRight() {
         current.x++;
         if (stage.collidesWith(current)) {
             current.x--;
         }
     }
-/**
- * Moves the current tetramino one step down if it does not collide with any 
- * blocks in the grid.
- * @see    stage.collidesWith(current)
- */
+    /**
+     * Moves the current tetramino one step down if it does not collide with any 
+     * blocks in the grid.
+     */
     public void moveDown() {
         current.y++;
         if (stage.collidesWith(current)) {
@@ -90,20 +82,19 @@ public class Logic implements Runnable {
         }
     }
 
-/**
- * Creates a new tetramino and gives it its starting coordinates.
- * @see    createRandomEnum()
- */
-    //
+    /**
+     * Creates a new tetramino and gives it its starting coordinates.
+     * @return 
+     */
     private Tetramino createRandomTetramino() {
         Shape randomShape = createRandomEnum();
         return new Tetramino(9, 0, randomShape);
     }
 
-/**
- * Creates a random Enum which will determine what kind of shape a tetramino 
- * will have.
- */
+    /**
+     * Creates a random Enum which will determine what kind of shape a tetramino 
+     * will have.
+     */
     private Shape createRandomEnum() {
         int tetraminoShape = (int) (Math.random() * 100);
         if (tetraminoShape < 15) {
@@ -121,10 +112,10 @@ public class Logic implements Runnable {
         }
         return I;
     }
-/**
- * Changes the tetramino's rotation status until the rotated version does not 
- * collide with any blocks in the grid.
- */
+    /**
+     * Changes the tetramino's rotation status until the rotated version does not 
+     * collide with any blocks in the grid.
+     */
     void rotate() {
         current.rotate();
         while (stage.collidesWith(current)) {
@@ -132,9 +123,9 @@ public class Logic implements Runnable {
         }
     }
     
-/**
- * Used to pass the current state of the grid and the tetramino to TetrisUI.
- */
+    /**
+     * Used to pass the current state of the grid and the tetramino to TetrisUI.
+     */
     public char[][] getGridFromStage() {
         if (current == null) {
             return this.stage.getBlockGrid();
@@ -165,6 +156,10 @@ public class Logic implements Runnable {
         return this.stage.getScore();
     }
     
+    /**
+     * Calls the increaseScore() method in the Stage class. This method is
+     * called in TetrisUI when the player presses the Down key.
+     */
     public void increaseStageScoreOnDown() {
         this.stage.increaseScore();
     }

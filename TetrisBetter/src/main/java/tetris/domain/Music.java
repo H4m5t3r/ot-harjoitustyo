@@ -18,6 +18,11 @@ public class Music {
         this.playing = false;
     }
     
+    /**
+     * Makes the program play one of the music files located in the project 
+     * directory. If a file is already playing it is stopped.
+     * @param filepath 
+     */
     public void playMusic(String filepath) {
         if (playing) {
             clip.stop();
@@ -33,6 +38,9 @@ public class Music {
         }
     }
     
+    /**
+     * Stops the current music.
+     */
     public void stopPlaying() {
         if (playing) {
             clip.stop();

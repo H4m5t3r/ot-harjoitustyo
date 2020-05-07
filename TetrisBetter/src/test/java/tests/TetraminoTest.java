@@ -25,9 +25,6 @@ public class TetraminoTest {
         this.tetramino = new Tetramino(0, 9, shape);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
     @Test
     public void getXWorks() {
         assertTrue(tetramino.getX() == 0);

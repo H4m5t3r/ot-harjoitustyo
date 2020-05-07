@@ -7,7 +7,7 @@ In this program the user can play the classic video game Tetris. Before the game
 * [x] The game screen
 * [x] The menu screen
 * [x] Music
-* [ ] Backgrounds
+* [x] Backgrounds
 
 ## The user interface
 The program consists of two views:

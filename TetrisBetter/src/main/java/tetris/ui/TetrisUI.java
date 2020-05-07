@@ -152,6 +152,7 @@ public class TetrisUI extends Application {
         menuElements.setLayoutY(150);
         menuPane.getChildren().add(menuElements);
         
+        //The game scene
         gameScene = new Scene(gamePane, 25 * 12 * 2, 25 * 24);
         
         gameScene.setOnKeyPressed((event) -> {
@@ -219,7 +220,10 @@ public class TetrisUI extends Application {
         System.exit(0);
     }
     
-    //Updated the menu screen when the background buttons are pressed
+    /**
+     * Updates the menu screen when the background buttons are pressed
+     * @param menuPane 
+     */
     private void updateMenuScreen(Pane menuPane) {
         menuPane.getChildren().clear();
         background = new Image(backgroundFile);
@@ -227,7 +231,10 @@ public class TetrisUI extends Application {
         menuPane.getChildren().addAll(iv, menuElements);
     }
     
-    //Updates the game pane so that the user can see what is happening
+    /**
+     * Updates the game pane so that the user can see what is happening
+     * @param gamePane 
+     */
     private void updateGameScreen(Pane gamePane) {
         char[][] grid = logic.getGridFromStage();
         if (grid[27][0] == 'e') {

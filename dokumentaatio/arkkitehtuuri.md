@@ -15,8 +15,8 @@ The music class is used by the UI to start playing audio files located in the pr
 
 ## Logic
 The Logic contains methods that are related to running the game. It uses two classes:
-* Tetramino (called current) 
-* Stage (called stage)
+* Tetramino (called "current") 
+* Stage (called "stage")
 
 One should note that the Stage class is not the same as the JavaFX class Stage.
 
@@ -30,7 +30,30 @@ The Logic class' methods:
 * rotate()
 * getGridFromStage() (used for passing the current situation to the UI where it is visualized)
 
-The Logic class' most important part is the run() method. This is the method that the TimerTask in the UI calls and makes the game progress. When it is run it first checks if it should create a new tetramino. If the dropCounter (used for determining whether it is time for the tetramino to fall down) is 0 the method checks if the tetramino can be moved down using stage.collidesWith(current). If not it stage.placeTetramino() is called (merges the tetramino with the grid) and stage.removeRowsCheck() checks if any rows are full.
+The Logic class' most important part is the run() method. This is the method that the TimerTask in the UI calls and makes the game progress. When it is run it first checks if it should create a new tetramino. When a new tetramino is created the run() method checks if it already collides with the stage. If it does it means that the game has ended and the method setGameEnd() is called. It places an "e" character in the bottom left corner of the grid (inside the wall) and when updateGameScreen() is called in TetrisUI it notices this and displays the text "GAME OVER". While the game is not over it continues normally. If the dropCounter (used for determining whether it is time for the tetramino to fall down) is 0 the method checks if the tetramino can be moved down using stage.collidesWith(current). If not, then stage.placeTetramino() is called (merges the tetramino with the grid) and stage.removeRowsCheck() checks if any rows are full.
+
+```
+public void run() {
+    if (current == null) {
+        current = createRandomTetramino();
+        if (stage.collidesWith(current)) {
+            stage.setGameEnd();
+        }
+    }
+    if (dropCounter == 0) {
+        current.y++;
+        if (stage.collidesWith(current)) {
+            current.y--;
+            stage.placeTetramino(current);
+            stage.removeRowsCheck();
+            current = null;
+        }
+        dropCounter += dropCounterIncrement;
+    } else {
+        dropCounter--;
+    }
+}
+```
 
 #### Sequence diagram for createRandomTetramino()
 ![Sequence diagram for createRandomTetramino()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/createRandomTetramino.png)
