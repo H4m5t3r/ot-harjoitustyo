@@ -8,7 +8,11 @@ java -jar Tetris-v0.8.jar
 ```
 
 ## The menu
-When the program starts the menu screen will be displayed. The user will have the option to make the program play music and stopping it. The music can be started by clicking on one of the music alternatives and stopped by clicking on the button that says "Stop". If a new music tune is started when another is already playing the one that is already playing will be stopped before the new one is started. A new game can be started by clicking on "New game".
+When the program starts the menu screen will be displayed. The user will have the option to make the program play music and stopping it. The music can be started by clicking on one of the music alternatives and stopped by clicking on the button that says "Stop". If a new music tune is started when another is already playing the one that is already playing will be stopped before the new one is started.
+
+The user also has the option to change the color of the background. This can be done by clicking on one of the color alternatives.
+
+A new game can be started by clicking on "New game". Once the game is started the music and background can no longer be changed.
 
 ![menu](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/menu.png)
 

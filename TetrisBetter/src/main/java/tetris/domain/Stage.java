@@ -93,8 +93,9 @@ public class Stage {
 
     /**
      * Removes a row and lowers the blocks above that row by one.
+     * @param heightLimit
      */
-    private void removeRow(int heightLimit) {
+    public void removeRow(int heightLimit) {
         for (int y = heightLimit; y > 0; y--) {
             for (int x = 0; x < blockGrid[heightLimit].length; x++) {
                 blockGrid[y][x] = blockGrid[y - 1][x];

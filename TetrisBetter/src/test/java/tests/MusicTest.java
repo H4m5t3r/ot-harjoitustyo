@@ -1,6 +1,5 @@
 package tests;
 
-
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,9 +14,6 @@ public class MusicTest {
         this.music = new Music();
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
     @Test
     public void notPlayingInTheBeginning() {
         assertTrue(music.isPlaying() == false);
@@ -29,6 +25,8 @@ public class MusicTest {
         assertTrue(music.isPlaying() == true);
         music.playMusic("TetrisPiano.wav");
         assertTrue(music.isPlaying() == true);
+        music.stopPlaying();
+        assertTrue(music.isPlaying() == false);
         music.stopPlaying();
         assertTrue(music.isPlaying() == false);
     }

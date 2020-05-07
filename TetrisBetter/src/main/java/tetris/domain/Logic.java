@@ -119,7 +119,7 @@ public class Logic implements Runnable {
      * Changes the tetramino's rotation status until the rotated version does not 
      * collide with any blocks in the grid.
      */
-    void rotate() {
+    public void rotate() {
         current.rotate();
         while (stage.collidesWith(current)) {
             current.rotate();
