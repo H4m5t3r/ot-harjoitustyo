@@ -59,16 +59,22 @@ public void run() {
 ![Sequence diagram for createRandomTetramino()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/createRandomTetramino.png)
 
 #### Sequence diagram for collidesWith(current)
+Here the program runs a collision check. In this case the tetramino does not collide with the stage and a false value is returned.
+
 ![Sequence diagram for collidesWith(current)](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/collidesWith(current).png)
 
 #### Sequence diagram for placeTetramino(current)
+The stage gets a two-dimensional collision check array from the current tetramino and puts "#" characters in the block grid in the corresponding coordinates when it notices a "#" character in the collision check array.
+
 ![Sequence diagram for placeTetramino(current)](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/placeTetramino(current).png)
 
 #### Sequence diagram for removeRowsCheck()
+In this case the mremoveRowsCheck() method notices that one row should be removed and removeRow(y) is called for that y coordinate.
+
 ![Sequence diagram for removeRowsCheck()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/removeRowsCheck().png)
 
 #### Sequence diagram for the run() method in TetrisUI
-**NOTE: The whole sequence diagram is what the run() method in TetrisUI does. The run() method that is called in the sequence diagram is the logic class' run() method being called. Here the calls in the logig class' run have been left out because they were already visualized and can be found in the piece of code prior to the pictures.**
+**NOTE: The whole sequence diagram is what the run() method in TetrisUI does. The run() method that is called in the sequence diagram is the logic class' run() method being called. Here the calls in the logic class' run have been left out because they were already visualized and can be found in the piece of code prior to the pictures.**
 
 ![Sequence diagram for UIrun()()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UIrun().png)
 
