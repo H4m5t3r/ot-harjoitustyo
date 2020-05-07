@@ -74,7 +74,7 @@ In this case the mremoveRowsCheck() method notices that one row should be remove
 ![Sequence diagram for removeRowsCheck()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/removeRowsCheck().png)
 
 #### Sequence diagram for the run() method in TetrisUI
-**NOTE: The whole sequence diagram is what the run() method in TetrisUI does. The run() method that is called in the sequence diagram is the logic class' run() method being called. Here the calls in the logic class' run have been left out because they were already visualized and can be found in the piece of code prior to the pictures.**
+**NOTE: The whole sequence diagram is what the run() method in TetrisUI does. The run() method that is called in the sequence diagram is the logic class' run() method being called. Here the calls in the logic class' run() have been left out because they were already visualized and can be found in the piece of code prior to the pictures. This sequence diagram focuses on what the UI class does.**
 
 ![Sequence diagram for UIrun()()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UIrun().png)
 

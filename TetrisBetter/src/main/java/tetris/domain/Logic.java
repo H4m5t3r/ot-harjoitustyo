@@ -25,6 +25,9 @@ public class Logic implements Runnable {
         stage = new Stage();
     }
 
+    /**
+     * The core method that makes the game progress.
+     */
     @Override
     public void run() {
         if (current == null) {

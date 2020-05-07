@@ -30,6 +30,11 @@ public class Tetramino {
         return this.rotation;
     }
     
+    /**
+     * Returns a 90 degree clockwise rotated array.
+     * @param toBeRotated
+     * @return 
+     */
     public static char[][] rotateCollisionCheck(char[][] toBeRotated) {
         char[][] rotated = new char[4][4];
         rotated[0][0] = toBeRotated[3][0]; //The first row
@@ -48,15 +53,21 @@ public class Tetramino {
         rotated[3][1] = toBeRotated[2][3];
         rotated[3][2] = toBeRotated[1][3];
         rotated[3][3] = toBeRotated[0][3];
-        return rotated; //returns a 90 degree clockwise rotated array
+        return rotated;
     }
     
+    /**
+     * Increases the tetramino's rotation status or returns it to 0 if it is 3.
+     */
     public void rotate() {
         rotation = rotation == 3 ? 0 : rotation + 1;
     }
     
-    //Returns a 4 * 4 array that matches the current tetramino's shape
-    //and rotation
+    /**
+     * Returns a 4 * 4 array that matches the current tetramino's shape
+     * and rotation.
+     * @return 
+     */
     public char[][] getCollisionCheck() {
         char[][] collisionCheck = shape.getDefaultCollisionCheck();
         
@@ -66,12 +77,16 @@ public class Tetramino {
         return collisionCheck;
     }
     
- /**
- * A class used to determine what shape a tetramino will have.
- */
+    /**
+    * A class used to determine what shape a tetramino will have.
+    */
     public static enum Shape {
         L, J, S, Z, I, O, T;
         
+        /**
+         * Returns a 4 * 4 array that matches the shape's default rotation.
+         * @return 
+         */
         private char[][] getDefaultCollisionCheck() {
             switch (this) {
                 case L:
