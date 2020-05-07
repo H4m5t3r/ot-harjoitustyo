@@ -58,6 +58,20 @@ public void run() {
 #### Sequence diagram for createRandomTetramino()
 ![Sequence diagram for createRandomTetramino()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/createRandomTetramino.png)
 
+#### Sequence diagram for collidesWith(current)
+![Sequence diagram for collidesWith(current)](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/collidesWith(current).png)
+
+#### Sequence diagram for placeTetramino(current)
+![Sequence diagram for placeTetramino(current)](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/placeTetramino(current).png)
+
+#### Sequence diagram for removeRowsCheck()
+![Sequence diagram for removeRowsCheck()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/removeRowsCheck().png)
+
+#### Sequence diagram for the run() method in TetrisUI
+**NOTE: The whole sequence diagram is what the run() method in TetrisUI does. The run() method that is called in the sequence diagram is the logic class' run() method being called. Here the calls in the logig class' run have been left out because they were already visualized and can be found in the piece of code prior to the pictures.**
+
+![Sequence diagram for UIrun()()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UIrun().png)
+
 
 ### Tetramino
 A Tetramino is a class used to describe the falling polygons. It contains a Shape (an Enum) that describes what shape it has, an integer called rotation and its x and y coordinate. There are 7 different shapes. The class has 3 public methods:
