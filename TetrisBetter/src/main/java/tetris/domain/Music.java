@@ -34,7 +34,8 @@ public class Music {
             clip.start();
             playing = true;
         } catch (Exception e) {
-            System.out.println("MusicFileError");
+            System.out.println("MusicFileError. Are the music files located "
+                    + "in the project folder?");
         }
     }
     
