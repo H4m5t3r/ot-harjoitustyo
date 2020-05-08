@@ -1,5 +1,6 @@
 package tetris.ui;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.application.Application;
@@ -226,7 +227,12 @@ public class TetrisUI extends Application {
      */
     private void updateMenuScreen(Pane menuPane) {
         menuPane.getChildren().clear();
-        background = new Image(backgroundFile);
+        if (new File(backgroundFile.substring(5)).exists()) {
+            background = new Image(backgroundFile);
+        } else {
+            System.out.println("BackgroundImageError. Are the background images "
+                    + "located in the project folder TetrisBetter?");
+        }
         iv.setImage(background);
         menuPane.getChildren().addAll(iv, menuElements);
     }

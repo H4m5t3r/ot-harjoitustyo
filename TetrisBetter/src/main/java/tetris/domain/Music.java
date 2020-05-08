@@ -35,7 +35,7 @@ public class Music {
             playing = true;
         } catch (Exception e) {
             System.out.println("MusicFileError. Are the music files located "
-                    + "in the project folder?");
+                    + "in the project folder TetrisBetter?");
         }
     }
     

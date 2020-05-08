@@ -14,4 +14,8 @@ Excluding the UI the tests' row coverage is 97% and the branch coverage is 93%. 
 
 ![Jacoco report](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/jacoco.png)
 
-## 
+## UI testing and configuration 
+The UI has been tested manually. All features listed in the [project's specifications](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md) work and all visual details are displayed correctly.
+
+## Configuration on other devices
+The program works as it should on Linux devices. The program has been tested manually using a virtual Linux environment. When the program is downloaded it is important to place the music and background files in the TetrisBetter folder. If the program does not find the music files or the backgrounds it will print an error message asking the user if the files are located in the project folder.

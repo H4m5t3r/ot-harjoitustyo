@@ -17,6 +17,6 @@ A new game can be started by clicking on "New game". Once the game is started th
 ![menu](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/menu.png)
 
 ## The game
-When a new game is started the player can use the left and right arrow keys to move the current tetramino left and right. The player can make it go down faster by pressing the down arrow key and rotate it with the up arrow key.
+When a new game is started the player can use the left and right arrow keys to move the current tetramino left and right. The player can make it go down faster by pressing the down arrow key and rotate it with the up arrow key. When the down key is pressed it will also increase the player's score by one. When a row is filled the score will increase by 100.
 
 ![game](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/game.png)
