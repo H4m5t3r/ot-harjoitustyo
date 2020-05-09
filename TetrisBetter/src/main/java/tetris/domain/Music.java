@@ -31,7 +31,7 @@ public class Music {
         try {
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(file));
-            clip.start();
+            clip.loop(999);
             playing = true;
         } catch (Exception e) {
             System.out.println("MusicFileError. Are the music files located "

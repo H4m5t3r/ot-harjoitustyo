@@ -4,6 +4,9 @@ This repository contains a Tetris project for the course "Ohjelmistotekniikka" (
 
 The directory where the program is located is called TetrisBetter. The purpose of this name is not to imply that this would be a better version of Tetris, but to tell the difference between the current version and another folder that was used earlier. This folder was called Tetris but was later removed and replaced with TetrisBetter when the structure of the program was remade to make it more effective and easier to maintain. The old Tetris folder is no longer included in the repository.
 
+## Code language
+This program uses Java version 11 and has been tested in Ubuntu 18.04.
+
 ## Documentation
 [Specifications](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
@@ -21,7 +24,7 @@ The directory where the program is located is called TetrisBetter. The purpose o
 
 [Week 6](https://github.com/H4m5t3r/ot-harjoitustyo/releases/tag/viikko6)
 
-[Final release](https://github.com/H4m5t3r/ot-harjoitustyo/releases/tag/FINAL)
+[Final release](https://github.com/H4m5t3r/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Useful commands
 **Use these commands in the folder named "TetrisBetter".**
@@ -46,7 +49,7 @@ The generated file can be found in *target/site/jacoco/index.html*.
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
-Possible errors can be examined with the file located in *target/site/checkstyle.html*. 
+Errors can be examined with the file located in *target/site/checkstyle.html*. In this case one error will be thrown regarding the method getDefaultCollisionCheck() in the Shape class. This method is actually pretty simple but it exceeds the length limit of 20 lines because of the two-dimensional arrays that are created.
 
 **Create a jar file:**
 ```
