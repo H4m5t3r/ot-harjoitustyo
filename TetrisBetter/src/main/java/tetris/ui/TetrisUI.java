@@ -212,6 +212,7 @@ public class TetrisUI extends Application {
             System.exit(500);
         });
         
+        window.setTitle("T E T R I S");
         window.setScene(menuScene);
         window.show();
     }

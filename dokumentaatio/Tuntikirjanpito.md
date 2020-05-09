@@ -30,3 +30,5 @@
 |26.4|5| Added JavaDoc descriptions and more tests. |
 |28.4|4| Added a user manual and updated the architecture description as well as the rest of the documentation. |
 |6.5|4| Added a live score counter to the game and updated the look of the menu. |
+|7.5|5| I added sequence diagrams to the architecture description and updated some sections of the documentation. Minor updates to the JUnit tests |
+|8.5|4| I wrote the testing document, made a new release, updated the documentation and added error messages to the Music class and the UI. |
