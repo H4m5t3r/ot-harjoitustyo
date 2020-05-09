@@ -13,6 +13,7 @@ The controller class takes input from the user during the game and calls methods
 ## MusicPlayer
 The music class is used by the UI to start playing audio files located in the project folder. The class contains two methods: playMusic() and stopPlaying(). playMusic() takes the name of the file as input, which is passed from the UI.
 
+#### Sequence diagram for playMusic()
 ![playMusic()](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/playMusic().png)
 
 ## Logic
