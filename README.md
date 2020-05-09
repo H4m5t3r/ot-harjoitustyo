@@ -26,32 +26,36 @@ The directory where the program is located is called TetrisBetter. The purpose o
 ## Useful commands
 **Use these commands in the folder named "TetrisBetter".**
 
-Run the program:
+**Run the program:**
 ```
 mvn compile exec:java -Dexec.mainClass=tetris.main.Main
 ```
 
-Run the tests:
+**Run the tests:**
 ```
 mvn test
 ```
 
-Run the tests and generate a JaCoCo report:
+**Run the tests and generate a JaCoCo report:**
 ```
 mvn test jacoco:report
 ```
+The generated file can be found in *target/site/jacoco/index.html*.
 
-Run the Checkstyle tests:
+**Run the Checkstyle tests:**
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
+Possible errors can be examined with the file located in *target/site/checkstyle.html*. 
 
-Create a jar file:
+**Create a jar file:**
 ```
 mvn package
 ```
+The jar file is created in the *target* directory under the name OtmTodoApp-1.0-SNAPSHOT.jar.
 
-Generate a JavaDoc:
+**Generate a JavaDoc:**
 ```
 mvn javadoc:javadoc
 ```
+The generated file can be found in *target/site/apidocs/index.html*.

@@ -1,6 +1,6 @@
 # Testing document
 
-The program's logic has been tested using JUnit tests and the UI has been tested manually. The Junit tests can be found in the project folder:
+The program's logic has been tested using JUnit tests and the UI has been tested manually. The JUnit tests can be found in the "Test packages" section in NetBeans or the project folder:
 ```
 TetrisBetter/src/test/java/tests
 ```
