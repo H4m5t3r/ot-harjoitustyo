@@ -5,7 +5,7 @@ This repository contains a Tetris project for the course "Ohjelmistotekniikka" (
 The directory where the program is located is called TetrisBetter. The purpose of this name is not to imply that this would be a better version of Tetris, but to tell the difference between the current version and another folder that was used earlier. This folder was called Tetris but was later removed and replaced with TetrisBetter when the structure of the program was remade to make it more effective and easier to maintain. The old Tetris folder is no longer included in the repository.
 
 ## Code language
-This program uses Java version 11 and has been tested in Ubuntu 18.04.
+This program uses Java version 11.
 
 ## Documentation
 [Specifications](https://github.com/H4m5t3r/ot-harjoitustyo/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
