@@ -1,6 +1,6 @@
 # Work time log
 
-**Total amount of hours spent: 90**
+**Total amount of hours spent: 106**
 | day | time | what I did  |
 | :----:|:-----| :-----|
 | 19.3 | 1    | I read through the instructions and checked how the project directory should be structured |
