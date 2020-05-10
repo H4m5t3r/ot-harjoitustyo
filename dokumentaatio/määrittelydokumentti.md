@@ -35,7 +35,7 @@ The backgrounds will be simple single-colored images. The main focus here is to 
 * red
 
 ## Music
-The different music options will all be variations of the Russian folk song that the game is associated with. The planned options are
+The different music options will all be variations of the Russian folk song that the game is associated with. The available options are
 * clarinet version
 * piano version
 * trumpet version
