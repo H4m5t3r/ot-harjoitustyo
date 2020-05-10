@@ -28,7 +28,7 @@ When the game begins the game window will appear with the chosen background. On 
 When the game is started polygons made from squares start falling down from the top of the screen and the player has to move the blocks around while they are still "in the air" and try to complete rows. When a whole row is filled with blocks they disappear and free up space for more. If the game field is filled up with blocks to the point that part of a polygon is above the allowed game area the game ends.
 
 ## The backgrounds
-The backgrounds will be simple single-colored images. The main focus here is to have different options to choose from and potential for expansion. The planned background color options are
+The backgrounds will be simple single-colored images. The main focus here is to have different options to choose from and potential for expansion. The available background color options are
 * white
 * blue
 * green
